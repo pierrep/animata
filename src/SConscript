@@ -1,0 +1,129 @@
+################################################################################
+# animata scons script
+
+TARGET = 'animata'
+
+Import(['env', 'platform', 'ANIMATA_VERSION', 'ANIMATA_MAJOR_VERSION',
+	'ANIMATA_MINOR_VERSION', 'DEBUG', 'PROFILE', 'STATIC'])
+
+SOURCES  = ['animata.cpp', 'Vector2D.cpp', 'Vertex.cpp', 'Face.cpp', 'Mesh.cpp',
+			'Texture.cpp', 'TextureManager.cpp', 'ImageBox.cpp',
+			'Joint.cpp', 'Selection.cpp', 'Skeleton.cpp',
+			'Bone.cpp', 'Primitives.cpp', 
+			'Layer.cpp', 'QuadEdge.cpp', 'Subdiv.cpp',
+			'Vector3D.cpp', 'Camera.cpp', 'Matrix.cpp',
+			'OSCManager.cpp', 'Playback.cpp', 'IO.cpp',
+			'Transform.cpp',
+			'animataUI.cpp']
+
+XMLLIB = ['libs/FLU/Flu_Tree_Browser.cpp', 'libs/FLU/flu_pixmaps.cpp',
+			'libs/FLU/FluSimpleString.cpp',
+			'libs/tinyxml/tinyxml.cpp', 'libs/tinyxml/tinystr.cpp',
+			'libs/tinyxml/tinyxmlerror.cpp', 'libs/tinyxml/tinyxmlparser.cpp']
+
+OSCLIB = ['libs/oscpack/osc/OscOutboundPacketStream.cpp',
+			'libs/oscpack/osc/OscPrintReceivedElements.cpp',
+			'libs/oscpack/osc/OscReceivedElements.cpp',
+			'libs/oscpack/osc/OscTypes.cpp',
+			'libs/oscpack/ip/IpEndpointName.cpp',
+			'libs/oscpack/ip/posix/NetworkingUtils.cpp',
+			'libs/oscpack/ip/posix/UdpSocket.cpp']
+
+SOURCES += XMLLIB + OSCLIB
+
+# change the environment for building
+
+CCFLAGS = '-Wall -Wno-unknown-pragmas -Wno-long-long ' \
+			'-pedantic ' \
+			'-pthread ' \
+			'-Wno-format -DTIXML_USE_STL ' \
+			'-DOSC_HOST_LITTLE_ENDIAN ' \
+			'-DANIMATA_MAJOR_VERSION=%s ' \
+			'-DANIMATA_MINOR_VERSION=%s ' % \
+				(ANIMATA_MAJOR_VERSION, ANIMATA_MINOR_VERSION) 
+LINKFLAGS = ''
+
+if PROFILE:
+	DEBUG = 1
+	CCFLAGS += '-pg '
+	LINKFLAGS += '-pg '
+
+if DEBUG:
+	CCFLAGS += '-ggdb2 -O0 -DDEBUG=1 '
+else:
+	CCFLAGS += '-g0 -O3 '
+
+CPPPATH = ['/usr/include', 'libs', 'libs/tinyxml', 'libs/oscpack']
+
+env.Append(CPPPATH = CPPPATH)
+env.Append(CCFLAGS = CCFLAGS)
+env.Append(LINKFLAGS = LINKFLAGS)
+
+# fix flags
+try:
+	# detect the location of fltk-config - scons cannot find it on osx otherwise?
+	import os
+	file = os.popen('which fltk-config')
+	fltk_config_bin = file.read().strip()
+	file.close()
+	if STATIC:
+		flags = env.ParseFlags('!%s --cxxflags --ldstaticflags --use-images --use-gl' % fltk_config_bin)
+	else:
+		flags = env.ParseFlags('!%s --cxxflags --ldflags --use-images --use-gl' % fltk_config_bin)
+except:
+	print "error: 'fltk' must be installed!"
+	Exit(1)
+
+# remove optimization flag inserted by fltk-config on mac
+if '-O2' in flags['CCFLAGS']:
+	flags['CCFLAGS'].remove('-O2')
+
+# link fltk dependencies statically 
+if platform == 'darwin':
+	if STATIC:
+		if ('png' in flags['LIBS']):
+			flags['LIBS'].remove('png')
+		if ('jpeg' in flags['LIBS']):
+			flags['LIBS'].remove('jpeg')
+		if ('z' in flags['LIBS']):
+			flags['LIBS'].remove('z')
+		flags['LIBS'].append((File('/opt/local/lib/libpng.a'),
+					File('/opt/local/lib/libjpeg.a'),
+					File('/opt/local/lib/libz.a')))
+
+env.MergeFlags(flags)
+
+# configure
+
+LIBS = [['m', 'math.h'],
+		['pthread', 'pthread.h'],
+		['fltk', 'FL/Fl.H']]
+
+if platform == 'posix':
+	LIBS += [['X11', 'X11/Xlib.h'],
+			 ['GL', 'GL/gl.h'],
+			 ['GLU', 'GL/glu.h']]
+
+if not GetOption('clean'):
+	conf = Configure(env)
+	for (lib, headers) in LIBS:
+		if not conf.CheckLibWithHeader(lib, headers, 'c++', autoadd = 1):
+			print "error: '%s' must be installed!" % lib
+			Exit(1)
+	env = conf.Finish()
+
+# build the application
+
+env.Program(source = SOURCES, target = TARGET)
+
+# run
+
+import os
+if platform == 'posix':
+	if 'DISPLAY' in os.environ:
+		env['ENV']['DISPLAY'] = os.environ['DISPLAY']
+	if 'LIBGL_DRIVERS_PATH' in os.environ:
+		env['ENV']['LIBGL_DRIVERS_PATH'] = os.environ['LIBGL_DRIVERS_PATH']
+
+env.AlwaysBuild(env.Alias('run', [TARGET], '%s' % env.File(TARGET).abspath))
+

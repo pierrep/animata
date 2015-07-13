@@ -1,0 +1,8 @@
+2008-12-18 - 0.004
+	* camera movement by mouse
+	* keyboard shortcuts (bakercp)
+	* layers are sorted according to their z coordinate
+
+2008-03-25 - 0.003
+	* first public release
+

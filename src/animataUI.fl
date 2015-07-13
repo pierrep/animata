@@ -1,0 +1,968 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0109 
+header_name {.h} 
+code_name {.cpp}
+decl {class Fl_Eval_Slider;} {public
+} 
+
+class AnimataUI {open
+} {
+  decl {Playback *playback;} {public
+  }
+  decl {AnimataSettings settings;} {public
+  }
+  Function {AnimataUI()} {} {
+    Fl_Window window {
+      label animata
+      callback {if (Fl::event()==FL_SHORTCUT && Fl::event_key()==FL_Escape) 
+   return; // ignore Escape}
+      xywh {419 53 855 650} type Double box BORDER_BOX color 0 selection_color 7 resizable
+      code0 {\#include <stdlib.h>}
+      code1 {\#include "animata.h"}
+      code2 {\#include <FL/Fl_File_Chooser.H>}
+      code3 {o->resizable(editorBox);} size_range {700 500 0 0} visible
+    } {
+      Fl_Menu_Bar {} {
+        xywh {0 0 900 20} box BORDER_BOX down_box BORDER_BOX color 30 selection_color 30 labelsize 12 labelcolor 7 textfont 4 textcolor 7
+        code0 {\#include <FL/Fl_Slider.H> /* Fl_Eval_Slider */}
+        code1 {\#include <math.h> /* Fl_Eval_Slider */}
+        code2 {\#include "Playback.h"}
+      } {
+        Submenu {} {
+          label {&File}
+          xywh {0 0 70 30} box BORDER_BOX color 0 selection_color 0 labelsize 12
+        } {
+          MenuItem {} {
+            label {&New}
+            callback {editorBox->newScene();}
+            xywh {0 0 36 30} box BORDER_BOX shortcut 0x4006e color 0 selection_color 0 labelsize 12
+          }
+          MenuItem {} {
+            label {&Open}
+            callback {char *file = fl_file_chooser("Open File", "*.nmt", "", 1);
+if (file != NULL)
+{
+	editorBox->loadScene(file);
+	editorBox->setFilename(file);
+}}
+            xywh {0 0 36 30} box BORDER_BOX shortcut 0x4006f color 0 selection_color 0 labelsize 12
+          }
+          MenuItem {} {
+            label {&Import}
+            callback {char *file = fl_file_chooser("Open File", "*.nmt", "", 1);
+if (file != NULL)
+{
+	editorBox->importScene(file);
+}}
+            xywh {0 0 19 15} shortcut 0x40069 labelsize 12
+          }
+          MenuItem {} {
+            label {&Save}
+            callback {const char *filename = editorBox->getFilename();
+if (filename[0] == 0)
+{
+	cb_Save1(o, v);
+	return;
+}
+else
+{
+	editorBox->saveScene(filename);
+}}
+            xywh {0 0 36 30} box BORDER_BOX shortcut 0x40073 color 0 selection_color 0 labelsize 12
+          }
+          MenuItem {} {
+            label {Save &As}
+            callback {char *newfile = fl_file_chooser("Save As", "*.nmt", "", 1);
+if (newfile != NULL)
+{
+	editorBox->saveScene(newfile);
+	editorBox->setFilename(newfile);
+}}
+            xywh {0 0 36 30} box BORDER_BOX shortcut 0x50073 color 0 selection_color 0 labelsize 12
+          }
+          MenuItem {} {
+            label {&Quit}
+            callback {//Fl::delete_widget(window);
+exit(0);}
+            xywh {0 0 36 30} box BORDER_BOX shortcut 0x40071 color 0 selection_color 0 labelsize 12
+          }
+        }
+        Submenu {} {
+          label {&Help}
+          xywh {0 0 62 20} labelsize 12
+        } {
+          MenuItem {} {
+            label {Animata Help}
+            xywh {0 0 30 20} shortcut 0xffbe labelsize 12
+          }
+          MenuItem {} {
+            label {&About}
+            callback {fl_message("Animata\\n\\nKitchen Budapest\\n\\nhttp://kibu.hu/projects/animata");}
+            xywh {0 0 30 20} labelsize 12
+          }
+        }
+      }
+      Fl_Tabs tabs {
+        label tabs
+        callback {/* callback to reset the active button when the tab
+   is selected again */
+settings.mode = ANIMATA_MODE_NONE;
+
+Fl_Tabs* t = (Fl_Tabs*)o;
+
+Fl_Group* g = (Fl_Group*)(t->value());
+
+if(g == imagePanel)
+{
+	g = imageButtons;
+}
+
+int n = g->children();
+
+for (int i = 0; i < n; ++i)
+{
+	Fl_Button *b = (Fl_Button *)(g->child(i));
+	if (b->value() &&
+		(b != playback_show_hide)) /* don't call the callback of view/show,
+						because it makes the output window flash */
+	{
+		b->do_callback();
+	}
+}
+
+editorBox->take_focus();}
+        private xywh {0 500 2048 160} box BORDER_BOX color 21 selection_color 3 align 0 resizable
+      } {
+        Fl_Group imagePanel {
+          label {&1 Image}
+          tooltip {Add, move and scale image textures in this tab.} xywh {0 520 2048 140} color 30 selection_color 30 labelsize 11 labelcolor 7 hide
+          code0 {o->resizable(imageScrollArea);}
+        } {
+          Fl_Group imageButtons {
+            label {Image Buttons}
+            xywh {5 530 105 120} labeltype NO_LABEL
+            code0 {o->resizable(NULL);}
+          } {
+            Fl_Button {} {
+              label {Add Image}
+              callback {fileChooser->show();
+
+while(fileChooser->visible())
+	Fl::wait();
+
+int count = fileChooser->count();
+
+for(int i = 1; i <= count; i++)
+{
+	const char *filename = fileChooser->value(i);
+	loadImage(filename);
+}}
+              tooltip {(A)} xywh {15 606 90 20} box BORDER_BOX shortcut 0x61 color 30 selection_color 3 labelsize 10 labelcolor 7
+              code0 {\#include <FL/Fl_JPEG_Image.H>}
+              code1 {\#include <FL/Fl_PNG_Image.H>}
+              code2 {\#include "ImageBox.h"}
+            }
+            Fl_Button {} {
+              label Move
+              user_data ANIMATA_MODE_TEXTURE_POSITION user_data_type long
+              callback {//printf("BEFORE: MOVE setting MODE is %d\\n ", settings.mode);
+settings.mode = (ANIMATA_MODES)(unsigned)v;
+//printf("AFTER: MOVE setting MODE is %d\\n ", settings.mode);}
+              tooltip {(M)} xywh {15 535 90 20} type Radio box BORDER_BOX down_box BORDER_BOX shortcut 0x6d value 1 color 30 selection_color 3 labelsize 10 labelcolor 7 when 1
+            }
+            Fl_Button {} {
+              label Scale
+              user_data ANIMATA_MODE_TEXTURE_SCALE user_data_type long
+              callback {//cb_Move
+//printf("BEFORE: SCALE setting MODE is %d\\n ", settings.mode);
+settings.mode = (ANIMATA_MODES)(unsigned)v;
+//printf("AFTER: SCALE setting MODE is %d\\n ", settings.mode);}
+              tooltip {(S)} xywh {15 554 90 20} type Radio box BORDER_BOX down_box BORDER_BOX shortcut 0x73 color 30 selection_color 3 labelsize 10 labelcolor 7 when 1
+            }
+          }
+          Fl_Scroll imageScrollArea {open
+            xywh {135 535 710 106} box FLAT_BOX color 36 selection_color 36
+          } {
+            Fl_Pack imagePack {
+              xywh {140 540 700 80} type HORIZONTAL color 36 selection_color 36
+              code0 {o->spacing(10);}
+            } {}
+          }
+        }
+        Fl_Group {} {
+          label {&2 Mesh}
+          tooltip {Create the mesh in this tab.} xywh {0 525 2048 135} box FLAT_BOX color 30 selection_color 30 labelsize 11 labelcolor 7 hide
+          code0 {o->resizable(NULL);}
+        } {
+          Fl_Button {} {
+            label {Create Vertex}
+            user_data ANIMATA_MODE_CREATE_VERTEX user_data_type long
+            callback {/* callback is created in fluid as a static member called cb_Create, which
+is used in all the button callbacks, because i have no idea how to create a
+callback using a code block, which is static.
+*/
+
+settings.prevMode = settings.mode; /* save previous mode to detect mode changes */
+settings.mode = (ANIMATA_MODES)(unsigned)v;}
+            tooltip {(V)} xywh {15 535 90 20} type Radio box BORDER_BOX down_box BORDER_BOX shortcut 0x76 value 1 color 30 selection_color 3 labelsize 10 labelcolor 7 when 1
+          }
+          Fl_Button {} {
+            label {Create Triangle}
+            user_data ANIMATA_MODE_CREATE_TRIANGLE user_data_type long
+            callback cb_Create
+            tooltip {(T)} xywh {15 554 90 20} type Radio box BORDER_BOX down_box BORDER_BOX shortcut 0x74 color 30 selection_color 3 labelsize 10 labelcolor 7 when 1
+            code3 {/* how to create static callbacks? */}
+          }
+          Fl_Button {} {
+            label Triangulate user_data_type {void*}
+            callback {editorBox->triangulate();
+o->clear();}
+            tooltip {(A)} xywh {110 554 90 20} type Toggle box BORDER_BOX down_box BORDER_BOX shortcut 0x61 color 30 selection_color 3 labelsize 10 labelcolor 7 when 1
+          }
+          Fl_Button {} {
+            label Texturize
+            user_data ANIMATA_MODE_TEXTURIZE user_data_type long
+            callback {Texture *texture = editorBox->getTextureManager()->getActiveTexture();
+
+if(texture)
+	editorBox->getMesh()->attachTexture(texture);
+
+o->clear();}
+            tooltip {(X)} xywh {15 573 90 20} type Toggle box BORDER_BOX down_box BORDER_BOX shortcut 0x78 color 30 selection_color 3 labelsize 10 labelcolor 7 when 1
+            code0 {\#include <vector>}
+          }
+          Fl_Button {} {
+            label {Select / Move}
+            user_data ANIMATA_MODE_MESH_SELECT user_data_type long
+            callback cb_Create
+            tooltip {(S)} xywh {15 606 90 20} type Radio box BORDER_BOX down_box BORDER_BOX shortcut 0x73 color 30 selection_color 3 labelsize 10 labelcolor 7 when 1
+          }
+          Fl_Button {} {
+            label Delete
+            user_data ANIMATA_MODE_MESH_DELETE user_data_type long
+            callback cb_Create
+            tooltip {(D)} xywh {15 625 90 20} type Radio box BORDER_BOX down_box BORDER_BOX shortcut 0x64 color 30 selection_color 3 labelsize 10 labelcolor 7 when 1
+          }
+          Fl_Value_Slider {} {
+            label threshold
+            callback {settings.triangulateAlphaThreshold = (int)(o->value());}
+            xywh {208 556 175 17} type Horizontal box BORDER_BOX color 30 selection_color 3 labeltype NO_LABEL labelsize 10 labelcolor 7 align 5 maximum 255 step 1 value 100 textcolor 7
+          }
+        }
+        Fl_Group {} {
+          label {&3 Skeleton}
+          tooltip {Create the skeleton in this tab.} xywh {0 525 2048 135} box FLAT_BOX color 30 selection_color 30 labelsize 11 labelcolor 7
+          code0 {o->resizable(NULL);}
+        } {
+          Fl_Button {} {
+            label {Create Joint}
+            user_data ANIMATA_MODE_CREATE_JOINT user_data_type long
+            callback cb_Create
+            tooltip {(J)} xywh {15 535 90 20} type Radio box BORDER_BOX down_box BORDER_BOX shortcut 0x6a value 1 color 30 selection_color 3 labelsize 10 labelcolor 7 when 1
+          }
+          Fl_Button {} {
+            label {Create Bone}
+            user_data ANIMATA_MODE_CREATE_BONE user_data_type long
+            callback cb_Create
+            tooltip {(B)} xywh {15 554 90 20} type Radio box BORDER_BOX down_box BORDER_BOX shortcut 0x62 color 30 selection_color 3 labelsize 10 labelcolor 7 when 1
+          }
+          Fl_Button {} {
+            label {Attach Vertices}
+            user_data ANIMATA_MODE_ATTACH_VERTICES user_data_type long
+            callback cb_Create
+            tooltip {(A)} xywh {15 573 90 20} type Radio box BORDER_BOX down_box BORDER_BOX shortcut 0x61 color 30 selection_color 3 labelsize 10 labelcolor 7 when 1
+          }
+          Fl_Button {} {
+            label {Select / Move}
+            user_data ANIMATA_MODE_SKELETON_SELECT user_data_type long
+            callback cb_Create
+            tooltip {(S)} xywh {15 606 90 20} type Radio box BORDER_BOX down_box BORDER_BOX shortcut 0x73 color 30 selection_color 3 labelsize 10 labelcolor 7 when 1
+          }
+          Fl_Button {} {
+            label Delete
+            user_data ANIMATA_MODE_SKELETON_DELETE user_data_type long
+            callback cb_Create
+            tooltip {(D)} xywh {15 625 90 20} type Radio box BORDER_BOX down_box BORDER_BOX shortcut 0x64 color 30 selection_color 3 labelsize 10 labelcolor 7 when 1
+          }
+          Fl_Tabs skeletonPrefTabs {
+            xywh {135 535 640 110} box NO_BOX color 30 selection_color 30
+          } {
+            Fl_Group jointPrefs {
+              xywh {135 535 570 110} color 30 selection_color 30
+            } {
+              Fl_Box {} {
+                label Joint
+                xywh {140 539 43 16} color 30 selection_color 30 labelfont 1 labelsize 12 labelcolor 3 align 20
+              }
+              Fl_Input jointName {
+                label {Name:}
+                callback {tempStorage.str = o->value();
+editorBox->setJointPrefsFromUI(PREFS_JOINT_NAME, &tempStorage);}
+                xywh {185 560 200 20} box BORDER_BOX color 30 selection_color 30 labelsize 10 labelcolor 7 when 1 textsize 12 textcolor 22
+              }
+              Fl_Value_Input jointX {
+                label {Pos: x }
+                callback {tempStorage.f = o->value();
+editorBox->setJointPrefsFromUI(PREFS_JOINT_X, &tempStorage);}
+                xywh {185 585 50 20} box BORDER_BOX color 30 selection_color 30 labelsize 10 labelcolor 7 when 8 textsize 10 textcolor 16
+              }
+              Fl_Value_Input jointY {
+                label {y }
+                callback {tempStorage.f = o->value();
+editorBox->setJointPrefsFromUI(PREFS_JOINT_Y, &tempStorage);}
+                xywh {250 585 50 20} box BORDER_BOX color 30 selection_color 30 labelsize 10 labelcolor 7 when 8 textsize 10 textcolor 16
+              }
+              Fl_Check_Button jointFixed {
+                label fixed
+                callback {tempStorage.i = o->value();
+editorBox->setJointPrefsFromUI(PREFS_JOINT_FIXED, &tempStorage);}
+                xywh {310 585 50 20} box BORDER_BOX down_box BORDER_BOX color 30 selection_color 3 labelsize 10 labelcolor 7
+              }
+              Fl_Check_Button jointOSC {
+                label OSC
+                callback {tempStorage.i = o->value();
+editorBox->setJointPrefsFromUI(PREFS_JOINT_OSC, &tempStorage);}
+                xywh {185 610 50 20} box BORDER_BOX down_box BORDER_BOX color 30 selection_color 3 labelsize 10 labelcolor 7
+              }
+            }
+            Fl_Group bonePrefs {
+              xywh {135 535 640 110} color 30 selection_color 30 hide
+            } {
+              Fl_Box {} {
+                label Bone
+                xywh {140 539 43 16} labelfont 1 labelsize 12 labelcolor 3 align 21
+              }
+              Fl_Input boneName {
+                label {Name:}
+                callback {editorBox->setBonePrefsFromUI(o->value());}
+                xywh {185 560 200 20} box BORDER_BOX color 30 selection_color 30 labelsize 10 labelcolor 7 when 1 textsize 12 textcolor 22
+              }
+              Fl_Value_Slider boneStiffness {
+                label {Stiffness:}
+                callback {editorBox->setBonePrefsFromUI(NULL, o->value());}
+                xywh {185 583 250 17} type Horizontal box BORDER_BOX color 30 selection_color 3 labelsize 10 labelcolor 7 align 4 minimum 0.16 maximum 0.840896 step 0.001 value 0.840896 textcolor 16
+                class Fl_Eval_Slider
+              }
+              Fl_Value_Slider boneLengthMult {
+                label {Lm:}
+                callback {float m = o->value();
+float mil = boneLengthMultMin->value();
+float mal = boneLengthMultMax->value();
+if (m < mil)
+{
+	m = mil;
+	o->value(m);
+}
+else if (m > mal)
+{
+	m = mal;
+	o->value(m);
+}
+editorBox->setBonePrefsFromUI(NULL, -1, m);}
+                tooltip {Bone length multiplier} xywh {481 560 250 17} type Horizontal box BORDER_BOX color 30 selection_color 3 labelsize 10 labelcolor 7 align 4 minimum 0.01 maximum 2 value 1 textcolor 16
+              }
+              Fl_Value_Slider boneLengthMultMin {
+                label {Min:}
+                callback {float mmin = o->value();
+editorBox->setBoneLengthMultMin(mmin);
+
+float mult = boneLengthMult->value();
+if (mult < mmin)
+{
+	boneLengthMult->value(mmin);
+	editorBox->setBonePrefsFromUI(NULL, -1, mmin);
+}}
+                tooltip {Minimum of length multiplier} xywh {481 581 250 17} type Horizontal box BORDER_BOX color 30 selection_color 3 labelsize 10 labelcolor 7 align 4 minimum 0.01 maximum 2 value 0.01 textcolor 16
+              }
+              Fl_Value_Slider boneLengthMultMax {
+                label {Max:}
+                callback {float mmax = o->value();
+editorBox->setBoneLengthMultMax(mmax);
+
+float mult = boneLengthMult->value();
+if (mmax < mult)
+{
+	boneLengthMult->value(mmax);
+	editorBox->setBonePrefsFromUI(NULL, -1, mmax);
+}}
+                tooltip {Maximum of length multiplier} xywh {481 600 250 17} type Horizontal box BORDER_BOX color 30 selection_color 3 labelsize 10 labelcolor 7 align 4 maximum 2 value 1 textcolor 16
+              }
+              Fl_Value_Slider boneTempo {
+                label {Tempo: }
+                callback {editorBox->setBoneTempo(o->value());}
+                xywh {481 620 249 17} type Horizontal box BORDER_BOX color 30 selection_color 3 labelsize 10 labelcolor 7 align 4 step 0.001 textcolor 16
+              }
+            }
+            Fl_Group attachVertices {open
+              xywh {135 535 570 110} color 30 selection_color 30 hide
+            } {
+              Fl_Box {} {
+                label {Attach Vertices}
+                xywh {140 539 110 16} labelfont 1 labelsize 12 labelcolor 3 align 21
+              }
+              Fl_Value_Slider attachArea {
+                label {Area:}
+                callback {editorBox->setAttachPrefsFromUI(o->value());}
+                xywh {185 560 450 17} type Horizontal box BORDER_BOX color 30 selection_color 3 labelsize 10 labelcolor 7 align 4 maximum 10 value 1 textcolor 22
+              }
+              Fl_Value_Slider attachFalloff {
+                label {Falloff:}
+                callback {editorBox->setAttachPrefsFromUI(FLT_MAX, o->value());}
+                xywh {185 580 450 17} type Horizontal box BORDER_BOX color 30 selection_color 3 labelsize 10 labelcolor 7 align 4 minimum 0.01 value 1 textcolor 22
+              }
+              Fl_Button {} {
+                label Attach
+                callback {editorBox->attachVertices();
+o->clear();}
+                tooltip {(SHIFT+A)} xywh {140 621 100 20} box BORDER_BOX down_box BORDER_BOX shortcut 0x10061 color 30 selection_color 3 labelsize 10 labelcolor 7
+              }
+              Fl_Button {} {
+                label Disattach
+                callback {editorBox->disattachVertices();
+o->clear();}
+                tooltip {(SHIFT+D)} xywh {245 621 100 20} box BORDER_BOX down_box BORDER_BOX shortcut 0x10064 color 30 selection_color 3 labelsize 10 labelcolor 7
+              }
+            }
+            Fl_Group noPrefs {open
+              xywh {135 535 570 110} color 35 selection_color 35 hide
+            } {}
+          }
+        }
+        Fl_Group {} {
+          label {&4 Automata}
+          tooltip {Set up animation settings in this tab.} xywh {0 525 2048 135} box BORDER_BOX color 30 selection_color 30 labelsize 11 labelcolor 7 hide
+          code0 {o->resizable(NULL);}
+        } {
+          Fl_Light_Button {} {
+            label {play simulation}
+            callback {settings.playSimulation = o->value();}
+            xywh {15 535 95 20} box BORDER_BOX down_box BORDER_BOX shortcut 0x20 value 1 color 30 labelsize 10 labelcolor 7
+          }
+          Fl_Value_Slider {} {
+            label iteration
+            callback {settings.iteration = (int)(o->value());}
+            xywh {15 625 220 17} type Horizontal box BORDER_BOX color 30 selection_color 3 labelsize 10 labelcolor 7 align 5 minimum 1 maximum 200 step 1 value 40 textcolor 7
+          }
+          Fl_Light_Button {} {
+            label gravity
+            callback {settings.gravity = o->value();}
+            xywh {25 569 95 20} box BORDER_BOX down_box BORDER_BOX color 30 labelsize 10 labelcolor 7
+          }
+          Fl_Value_Slider {} {
+            callback {settings.gravityForce = (float)(o->value());}
+            xywh {25 588 95 17} type Horizontal box BORDER_BOX color 30 selection_color 3 labelsize 10 labelcolor 7 align 8 value 0.5 textcolor 7
+          }
+          Fl_Dial {} {
+            callback {float a = M_PI*o->value()/180;
+
+settings.gravityX = -sin(a);
+settings.gravityY = cos(a);}
+            private xywh {135 570 35 35} type Line box OVAL_FRAME color 0 maximum 360 step 1
+            code0 {o->angles(0, 360);}
+          }
+        }
+        Fl_Group {} {
+          label {&5 Layer}
+          tooltip {Set up layering in this tab.} xywh {0 525 2048 135} box FLAT_BOX color 30 selection_color 30 labelsize 11 labelcolor 7 hide
+          code0 {o->resizable(NULL);}
+        } {
+          Fl_Button {} {
+            label Move
+            user_data ANIMATA_MODE_LAYER_MOVE user_data_type long
+            callback cb_Create
+            tooltip {(M)} xywh {15 535 90 20} type Radio box BORDER_BOX down_box BORDER_BOX shortcut 0x6d value 1 color 30 selection_color 3 labelsize 10 labelcolor 7 when 1
+          }
+          Fl_Button {} {
+            label Scale
+            user_data ANIMATA_MODE_LAYER_SCALE user_data_type long
+            callback cb_Create
+            tooltip {(S)} xywh {15 554 90 20} type Radio box BORDER_BOX down_box BORDER_BOX shortcut 0x73 color 30 selection_color 3 labelsize 10 labelcolor 7 when 1
+          }
+          Fl_Button {} {
+            label Depth
+            user_data ANIMATA_MODE_LAYER_DEPTH user_data_type long
+            callback cb_Create
+            tooltip {(E)} xywh {15 573 90 20} type Radio box BORDER_BOX down_box BORDER_BOX shortcut 0x65 color 30 selection_color 3 labelsize 10 labelcolor 7 when 1
+          }
+          Fl_Button {} {
+            label Add
+            callback {Flu_Tree_Browser::Node* n = layerTree->get_selected(1);
+
+if (!n)
+{
+    n = layerTree->get_root();
+}
+
+Layer *layer = (Layer *)n->user_data();
+
+if (layer)
+{
+  Layer *newLayer = layer->makeLayer();
+
+  Flu_Tree_Browser::Node *newNode = n->add(newLayer->getName());
+  newNode->user_data(newLayer);
+  layers->redraw();
+}}
+            tooltip {(A)} xywh {15 606 90 20} box BORDER_BOX down_box BORDER_BOX shortcut 0x61 color 30 selection_color 3 labelsize 10 labelcolor 7
+          }
+          Fl_Button {} {
+            label Delete
+            callback {int n = layerTree->num_selected();
+
+if (!n)
+  return;
+
+for (int i = n; i >= 1; i--)
+{
+  Flu_Tree_Browser::Node* node = layerTree->get_selected(i);
+  Layer *layer = (Layer *)node->user_data();
+
+  Layer *parent = layer->getParent();
+
+  if (parent)
+  {
+    // fprintf(stderr, "deleting layer %x\\n", layer);
+    // fflush(stderr);
+
+    // set the root layer as current
+    editorBox->setCurrentLayer(editorBox->getRootLayer());
+
+    // delete current layer
+    int r = parent->deleteSublayer(layer);
+    if (r) // error deleting sublayer
+    {
+      fprintf(stderr, "error deleting %s (%x)\\n", layer->getName(), layer);
+      continue;
+    }
+    selector->cancelPickLayer();
+  }
+  else
+  {
+    fprintf(stderr, "parent is NULL %s (%x)\\n", layer->getName(), layer);
+    continue;
+  }
+  layerTree->remove(node);
+}
+layers->redraw();}
+            tooltip {(D)} xywh {15 625 90 20} box BORDER_BOX down_box BORDER_BOX shortcut 0x64 color 30 selection_color 3 labelsize 10 labelcolor 7
+          }
+          Fl_Group {} {
+            xywh {135 535 570 110} box BORDER_BOX color 30 selection_color 30
+          } {
+            Fl_Box {} {
+              label Preferences
+              xywh {140 539 43 16} labelfont 1 labelsize 12 labelcolor 3 align 21
+            }
+            Fl_Input layerName {
+              label {Name:}
+              callback {tempStorage.str = o->value();
+editorBox->setLayerPrefsFromUI(PREFS_LAYER_NAME, &tempStorage);
+
+Flu_Tree_Browser::Node* n = layerTree->get_selected(1);
+if (n)
+{    
+    n->label(o->value());
+}}
+              xywh {195 560 250 20} box BORDER_BOX color 30 selection_color 30 labelsize 10 labelcolor 7 when 1 textsize 12 textcolor 22
+            }
+            Fl_Value_Slider layerAlpha {
+              label {Alpha: }
+              callback {tempStorage.f = o->value();
+editorBox->setLayerPrefsFromUI(PREFS_LAYER_ALPHA, &tempStorage);}
+              xywh {195 583 249 17} type Horizontal box BORDER_BOX color 30 selection_color 3 labelsize 10 labelcolor 7 align 4 step 0.001 textcolor 16
+            }
+            Fl_Check_Button layerVisible {
+              label {Visible: } user_data_type long
+              callback {tempStorage.i = o->value();
+editorBox->setLayerPrefsFromUI(PREFS_LAYER_VISIBILITY, &tempStorage);}
+              xywh {195 605 15 20} down_box BORDER_BOX value 1 color 30 selection_color 3 labelsize 10 labelcolor 7 align 4
+            }
+          }
+        }
+        Fl_Group {} {
+          label {&6 Camera}
+          tooltip {Set up cameras in this tab.} xywh {0 525 2048 135} box FLAT_BOX color 30 selection_color 30 labelsize 11 labelcolor 7 hide
+          code0 {o->resizable(NULL);}
+        } {}
+        Fl_Group {} {
+          label {&7 View}
+          tooltip {Set up views in this tab.} xywh {0 525 2048 135} box BORDER_BOX color 30 selection_color 30 labelsize 11 labelcolor 7 hide
+          code0 {o->resizable(NULL);}
+        } {
+          Fl_Group {} {
+            label Editor open
+            xywh {5 545 70 110} color 0 selection_color 22 labelcolor 7
+          } {
+            Fl_Check_Button {} {
+              label Vertex
+              user_data DISPLAY_EDITOR_VERTEX user_data_type long
+              callback {if (o->value())
+{
+	((AnimataUI*)(o->parent()->parent()->parent()->parent()->user_data()))->settings.display_elements |=
+		(unsigned)v;
+}
+else
+{
+	((AnimataUI*)(o->parent()->parent()->parent()->parent()->user_data()))->settings.display_elements &=
+		~(unsigned)v;
+
+}}
+              private xywh {10 550 65 20} down_box BORDER_BOX value 1 color 30 selection_color 3 labelsize 10 labelcolor 7
+              code0 {o->do_callback();}
+            }
+            Fl_Check_Button {} {
+              label Triangle
+              user_data DISPLAY_EDITOR_TRIANGLE user_data_type long
+              callback cb_Vertex
+              private xywh {10 570 65 20} down_box BORDER_BOX value 1 color 30 selection_color 3 labelsize 10 labelcolor 7
+              code0 {o->do_callback();}
+            }
+            Fl_Check_Button {} {
+              label Joint
+              user_data DISPLAY_EDITOR_JOINT user_data_type long
+              callback cb_Vertex
+              private xywh {10 590 65 20} down_box BORDER_BOX value 1 color 30 selection_color 3 labelsize 10 labelcolor 7
+              code0 {o->do_callback();}
+            }
+            Fl_Check_Button {} {
+              label Bone
+              user_data DISPLAY_EDITOR_BONE user_data_type long
+              callback cb_Vertex
+              private xywh {10 610 65 20} down_box BORDER_BOX value 1 color 30 selection_color 3 labelsize 10 labelcolor 7
+              code0 {o->do_callback();}
+            }
+            Fl_Check_Button {} {
+              label Texture
+              user_data DISPLAY_EDITOR_TEXTURE user_data_type long
+              callback cb_Vertex
+              private xywh {10 630 65 25} down_box BORDER_BOX value 1 color 30 selection_color 3 labelsize 10 labelcolor 7
+              code0 {o->do_callback();}
+            }
+          }
+          Fl_Group {} {
+            label Output
+            xywh {80 545 70 110} color 0 selection_color 22 labelcolor 7
+          } {
+            Fl_Check_Button {} {
+              label Vertex
+              user_data DISPLAY_OUTPUT_VERTEX user_data_type long
+              callback cb_Vertex
+              private xywh {85 550 65 20} down_box BORDER_BOX color 30 selection_color 3 labelsize 10 labelcolor 7
+              code0 {o->do_callback();}
+            }
+            Fl_Check_Button {} {
+              label Triangle
+              user_data DISPLAY_OUTPUT_TRIANGLE user_data_type long
+              callback cb_Vertex
+              private xywh {85 570 65 20} down_box BORDER_BOX color 30 selection_color 3 labelsize 10 labelcolor 7
+              code0 {o->do_callback();}
+            }
+            Fl_Check_Button {} {
+              label Joint
+              user_data DISPLAY_OUTPUT_JOINT user_data_type long
+              callback cb_Vertex
+              private xywh {85 590 65 20} down_box BORDER_BOX color 30 selection_color 3 labelsize 10 labelcolor 7
+              code0 {o->do_callback();}
+            }
+            Fl_Check_Button {} {
+              label Bone
+              user_data DISPLAY_OUTPUT_BONE user_data_type long
+              callback cb_Vertex
+              private xywh {85 610 65 20} down_box BORDER_BOX color 30 selection_color 3 labelsize 10 labelcolor 7
+              code0 {o->do_callback();}
+            }
+            Fl_Check_Button {} {
+              label Texture
+              user_data DISPLAY_OUTPUT_TEXTURE user_data_type long
+              callback cb_Vertex
+              private xywh {85 630 65 25} down_box BORDER_BOX value 1 color 30 selection_color 3 labelsize 10 labelcolor 7
+              code0 {o->do_callback();}
+            }
+          }
+          Fl_Check_Button playback_show_hide {
+            label {show / hide}
+            callback {if(o->value())
+{
+  //playback->border(0); 
+  playback->show();
+  //playback->set_visible();
+}
+else
+{
+  playback->hide();
+  //playback->clear_visible();
+}}
+            tooltip {(S)} xywh {140 525 95 25} down_box BORDER_BOX shortcut 0x73 color 30 selection_color 3 labelcolor 7
+          }
+        }
+      }
+      Fl_Box editorBox {
+        label editor
+        xywh {0 20 640 480} box BORDER_BOX color 0 selection_color 0
+        class AnimataWindow
+      }
+      Fl_Group layers {
+        private xywh {640 20 220 501} color 22 selection_color 22 labeltype NO_LABEL labelcolor 32
+        code0 {\#include "Layer.h"}
+      } {
+        Fl_Group layerTree {
+          label layers
+          callback {Flu_Tree_Browser::Node* n = layerTree->get_selected(1);
+
+if (n)
+// && n != layerTree->get_root())
+{
+	Layer *l = (Layer *)n->user_data();
+    
+	if (l)
+	{
+		editorBox->setCurrentLayer(l);
+		editorBox->setLayerUIPrefs(l);
+	}
+}
+
+/*
+int l = layerTree->num_selected();
+Layer *layers = new Layer[l];
+Layer *actLayer = layers;
+for (int i = 0; i < l; i++)
+{
+	Flu_Tree_Browser::Node* n = layerTree->get_selected(i);
+	actLayer = (Layer *)n->user_data();
+	actLayer++;
+}
+editorBox->setSelectedLayers(layers, l);
+delete [] layers;
+*/
+
+window->redraw();} open
+          xywh {640 20 215 501} box BORDER_BOX color 30 selection_color 31 labeltype NO_LABEL labelcolor 7 when 1
+          code0 {\#include "FLU/Flu_Tree_Browser.h"}
+          code1 {layerTree->auto_branches(true); layerTree->insertion_mode(FLU_INSERT_BACK);}
+          code2 {layerTree->always_open(true); /* root node is always open */}
+          code3 {layerTree->selection_drag_mode(FLU_DRAG_TO_MOVE); layerTree->allow_dnd(true); /* FIXME */}
+          class Flu_Tree_Browser
+        } {}
+      }
+      Fl_Group extra_includes_etc {open
+        private xywh {2048 2048 0 0}
+        code0 {using namespace Animata;}
+      } {}
+    }
+    code {fileChooser = new Fl_File_Chooser(".", "Image Files (*.{jpg,png})", 1, "choose");
+playback = new Playback(0, 0, 640, 480);
+playback->getCamera()->setParent(editorBox->getCamera());
+//editorBox->getCamera()->setClone(playback->getCamera()->setCloned());} {}
+  }
+  Function {show()} {} {
+    code {settings.mode = ANIMATA_MODE_TEXTURE_POSITION;
+imagePanel->set_visible();
+window->show();} {}
+  }
+  Function {fullscreen()} {} {
+    code {window->fullscreen();} {}
+  }
+  Function {resize(int x, int y, int w, int h)} {} {
+    code {window->resize(x, y, w, h);} {}
+  }
+  Function {loadImage(const char *filename)} {return_type {ImageBox *}
+  } {
+    code {if (!filename)
+	return NULL;
+
+// check if this image is already loaded
+for(int i = 0; i < imagePack->children(); i++)
+{
+	ImageBox *box = (ImageBox*)imagePack->child(i);
+
+	if(!strcmp(filename, box->getFilename()))
+		return box;
+}
+
+const char *ext = strrchr(filename, '.');
+Fl_Image *image = NULL;
+
+if (strcmp(ext, ".jpg") == 0)
+{
+	image = new Fl_JPEG_Image(filename);
+}
+else
+if (strcmp(ext, ".png") == 0)
+{
+	image = new Fl_PNG_Image(filename);
+}
+else
+{
+	return NULL;
+}
+
+if ((image->h() == 0) || (image->w() == 0))
+	return NULL;
+
+ImageBox* box = new ImageBox(filename, image, imagePack->x(), imagePack->y(), 80);
+imagePack->add(box);
+
+imageScrollArea->redraw();
+
+return box;} {selected
+    }
+  }
+  Function {~AnimataUI()} {} {
+    code {delete editorBox;
+delete fileChooser;
+delete playback;} {}
+  }
+  decl {Fl_File_Chooser *fileChooser;} {public
+  }
+  Function {refreshLayerTree(Layer *root)} {} {
+    code {clearLayerTree();
+
+Flu_Tree_Browser::Node* rootNode = layerTree->get_root();
+
+rootNode->label(root->getName());
+rootNode->user_data(root); //editorBox->getRootLayer());
+
+for(unsigned i = 0; i < root->getLayers()->size(); i++)
+{
+  Layer *l = (*root->getLayers())[i];
+
+  addLayerNodeRecursive(l, rootNode);
+}
+
+/*
+playback->setRootLayer(root);
+*/
+playback->setAllLayers(editorBox->getAllLayers());
+
+layers->redraw();} {}
+  }
+  Function {clearLayerTree()} {} {
+    code {layerTree->clear();
+layerTree->redraw();} {}
+  }
+  Function {addLayerNodeRecursive(Layer *layer, Flu_Tree_Browser::Node *node)} {private
+  } {
+    code {Flu_Tree_Browser::Node *newNode = node->add(layer->getName());
+
+if (!newNode) /* probably branch duplication */ 
+{
+  /* try to modify name */
+  char newName[512];
+  snprintf(newName, 511, "%s", layer->getName());
+  int len = strlen(newName) + 5;
+  while (len < 512)
+  {
+    strcat(newName, " copy");
+    newNode = node->add(newName);
+    if (newNode)
+    	break;
+    len += 5;
+  }
+  if (!newNode)
+    return;
+}
+
+newNode->user_data(layer);
+
+std::vector<Layer *> *subLayers = layer->getLayers();
+
+if(subLayers)
+{
+  for(unsigned i = 0; i < subLayers->size(); i++)
+  {
+    Layer *l = (*subLayers)[i];
+
+    addLayerNodeRecursive(l, newNode);
+  }
+}} {}
+  }
+  decl {union { int i; float f; const char *str; } tempStorage /* temporary storage space for returning values as void * */;} {}
+} 
+
+class Fl_Eval_Slider {: {public Fl_Slider}
+} {
+  decl {\#include <FL/fl_draw.H>} {}
+  decl {uchar textfont_, textsize_;} {}
+  decl {unsigned textcolor_;} {}
+  Function {Fl_Eval_Slider(int X, int Y, int W, int H, const char *L) : Fl_Slider(X, Y, W, H, L)} {} {
+    code {step(1, 100);
+textfont_ = FL_HELVETICA;
+textsize_ = 10;
+textcolor_ = FL_FOREGROUND_COLOR;} {}
+  }
+  Function {draw()} {} {
+    code {int sxx = x(), syy = y(), sww = w(), shh = h();
+  int bxx = x(), byy = y(), bww = w(), bhh = h();
+  if (horizontal()) {
+    bww = 35; sxx += 35; sww -= 35;
+  } else {
+    syy += 25; bhh = 25; shh -= 25;
+  }
+  if (damage()&FL_DAMAGE_ALL) draw_box(box(),sxx,syy,sww,shh,color());
+  Fl_Slider::draw(sxx+Fl::box_dx(box()),
+          syy+Fl::box_dy(box()),
+          sww-Fl::box_dw(box()),
+          shh-Fl::box_dh(box()));
+  draw_box(box(),bxx,byy,bww,bhh,color());
+  char buf[128];
+  snprintf(buf, 128, "%4.3f", value());
+  //format(buf);
+  fl_font(textfont(), textsize());
+  fl_color(active_r() ? textcolor() : fl_inactive(textcolor()));
+  fl_draw(buf, bxx, byy, bww, bhh, FL_ALIGN_CLIP);} {}
+  }
+  Function {handle(int event)} {return_type int
+  } {
+    code {if (event == FL_PUSH && Fl::visible_focus()) {
+    Fl::focus(this);
+    redraw();
+  }
+  int sxx = x(), syy = y(), sww = w(), shh = h();
+  if (horizontal()) {
+    sxx += 35; sww -= 35;
+  } else {
+    syy += 25; shh -= 25;
+  }
+  return Fl_Slider::handle(event,
+               sxx+Fl::box_dx(box()),
+               syy+Fl::box_dy(box()),
+               sww-Fl::box_dw(box()),
+               shh-Fl::box_dh(box()));} {}
+  }
+  Function {textfont() const} {return_type Fl_Font
+  } {
+    code {return (Fl_Font)textfont_;} {}
+  }
+  Function {textfont(uchar s)} {} {
+    code {textfont_ = s;} {}
+  }
+  Function {textsize() const} {return_type uchar
+  } {
+    code {return textsize_;} {}
+  }
+  Function {textsize(uchar s)} {} {
+    code {textsize_ = s;} {}
+  }
+  Function {textcolor() const} {return_type Fl_Color
+  } {
+    code {return (Fl_Color)textcolor_;} {}
+  }
+  Function {textcolor(unsigned s)} {} {
+    code {textcolor_ = s;} {}
+  }
+  Function {eval(float f)} {private return_type float
+  } {
+    code {return pow(f, 4);} {}
+  }
+  Function {evalinv(float f)} {private return_type float
+  } {
+    code {return pow(f, .25);} {}
+  }
+  Function {value()} {return_type float
+  } {
+    code {return eval(Fl_Slider::value());} {}
+  }
+  Function {value(float f)} {} {
+    code {Fl_Slider::value(evalinv(f));} {}
+  }
+} 

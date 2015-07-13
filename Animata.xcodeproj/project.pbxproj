@@ -1,0 +1,628 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD2456AB0EE3E28700B929EC /* libpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD2456AA0EE3E28700B929EC /* libpng.a */; };
+		FD2456AD0EE3E2A200B929EC /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD2456AC0EE3E2A200B929EC /* libjpeg.a */; };
+		FD2456AF0EE3E2D000B929EC /* libz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD2456AE0EE3E2D000B929EC /* libz.a */; };
+		FD2456B40EE3E31000B929EC /* libfltk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD2456B10EE3E31000B929EC /* libfltk.a */; };
+		FD2456B50EE3E31000B929EC /* libfltk_gl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD2456B20EE3E31000B929EC /* libfltk_gl.a */; };
+		FD2456B60EE3E31000B929EC /* libfltk_images.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD2456B30EE3E31000B929EC /* libfltk_images.a */; };
+		FD90FCD40ECA284200F2E603 /* animata.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FC9E0ECA284200F2E603 /* animata.cpp */; };
+		FD90FCD50ECA284200F2E603 /* animataUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCA00ECA284200F2E603 /* animataUI.cpp */; };
+		FD90FCD70ECA284200F2E603 /* Bone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCA30ECA284200F2E603 /* Bone.cpp */; };
+		FD90FCD80ECA284200F2E603 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCA50ECA284200F2E603 /* Camera.cpp */; };
+		FD90FCD90ECA284200F2E603 /* Face.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCA80ECA284200F2E603 /* Face.cpp */; };
+		FD90FCDA0ECA284200F2E603 /* ImageBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCAA0ECA284200F2E603 /* ImageBox.cpp */; };
+		FD90FCDB0ECA284200F2E603 /* IO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCAC0ECA284200F2E603 /* IO.cpp */; };
+		FD90FCDC0ECA284200F2E603 /* Joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCAE0ECA284200F2E603 /* Joint.cpp */; };
+		FD90FCDD0ECA284200F2E603 /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCB00ECA284200F2E603 /* Layer.cpp */; };
+		FD90FCDE0ECA284200F2E603 /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCB20ECA284200F2E603 /* Matrix.cpp */; };
+		FD90FCDF0ECA284200F2E603 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCB40ECA284200F2E603 /* Mesh.cpp */; };
+		FD90FCE00ECA284200F2E603 /* OSCManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCB60ECA284200F2E603 /* OSCManager.cpp */; };
+		FD90FCE10ECA284200F2E603 /* Playback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCB80ECA284200F2E603 /* Playback.cpp */; };
+		FD90FCE20ECA284200F2E603 /* Primitives.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCBB0ECA284200F2E603 /* Primitives.cpp */; };
+		FD90FCE30ECA284200F2E603 /* QuadEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCBD0ECA284200F2E603 /* QuadEdge.cpp */; };
+		FD90FCE50ECA284200F2E603 /* Selection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCC20ECA284200F2E603 /* Selection.cpp */; };
+		FD90FCE60ECA284200F2E603 /* Skeleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCC40ECA284200F2E603 /* Skeleton.cpp */; };
+		FD90FCE70ECA284200F2E603 /* Subdiv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCC60ECA284200F2E603 /* Subdiv.cpp */; };
+		FD90FCE80ECA284200F2E603 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCC80ECA284200F2E603 /* Texture.cpp */; };
+		FD90FCE90ECA284200F2E603 /* TextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCCA0ECA284200F2E603 /* TextureManager.cpp */; };
+		FD90FCEA0ECA284200F2E603 /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCCC0ECA284200F2E603 /* Transform.cpp */; };
+		FD90FCEB0ECA284200F2E603 /* Vector2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCCE0ECA284200F2E603 /* Vector2D.cpp */; };
+		FD90FCEC0ECA284200F2E603 /* Vector3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCD00ECA284200F2E603 /* Vector3D.cpp */; };
+		FD90FCED0ECA284200F2E603 /* Vertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FCD20ECA284200F2E603 /* Vertex.cpp */; };
+		FD90FD1C0ECA2C7400F2E603 /* animata.icns in Resources */ = {isa = PBXBuildFile; fileRef = FD90FD1B0ECA2C7400F2E603 /* animata.icns */; };
+		FD90FF540ECA2F7500F2E603 /* flu_pixmaps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FF2C0ECA2F7500F2E603 /* flu_pixmaps.cpp */; };
+		FD90FF550ECA2F7500F2E603 /* Flu_Tree_Browser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FF2E0ECA2F7500F2E603 /* Flu_Tree_Browser.cpp */; };
+		FD90FF560ECA2F7500F2E603 /* FluSimpleString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FF300ECA2F7500F2E603 /* FluSimpleString.cpp */; };
+		FD90FF570ECA2F7500F2E603 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FF340ECA2F7500F2E603 /* IpEndpointName.cpp */; };
+		FD90FF580ECA2F7500F2E603 /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FF390ECA2F7500F2E603 /* NetworkingUtils.cpp */; };
+		FD90FF590ECA2F7500F2E603 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FF3A0ECA2F7500F2E603 /* UdpSocket.cpp */; };
+		FD90FF5C0ECA2F7500F2E603 /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FF440ECA2F7500F2E603 /* OscOutboundPacketStream.cpp */; };
+		FD90FF5D0ECA2F7500F2E603 /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FF470ECA2F7500F2E603 /* OscPrintReceivedElements.cpp */; };
+		FD90FF5E0ECA2F7500F2E603 /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FF490ECA2F7500F2E603 /* OscReceivedElements.cpp */; };
+		FD90FF5F0ECA2F7500F2E603 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FF4B0ECA2F7500F2E603 /* OscTypes.cpp */; };
+		FD90FF600ECA2F7500F2E603 /* tinystr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FF4E0ECA2F7500F2E603 /* tinystr.cpp */; };
+		FD90FF610ECA2F7500F2E603 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FF500ECA2F7500F2E603 /* tinyxml.cpp */; };
+		FD90FF620ECA2F7500F2E603 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FF520ECA2F7500F2E603 /* tinyxmlerror.cpp */; };
+		FD90FF630ECA2F7500F2E603 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD90FF530ECA2F7500F2E603 /* tinyxmlparser.cpp */; };
+		FDD411F30EE02FBC00AD3F71 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD411EF0EE02FBC00AD3F71 /* ApplicationServices.framework */; };
+		FDD411F40EE02FBC00AD3F71 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD411F00EE02FBC00AD3F71 /* AGL.framework */; };
+		FDD411F50EE02FBC00AD3F71 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD411F10EE02FBC00AD3F71 /* OpenGL.framework */; };
+		FDD411F60EE02FBC00AD3F71 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD411F20EE02FBC00AD3F71 /* Carbon.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		5FD914BF095F51EE00976476 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.fl";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE).h",
+				"$(INPUT_FILE_DIR)/$(INPUT_FILE_BASE).cpp",
+			);
+			script = "cd ${INPUT_FILE_PATH}; fluid -c ${INPUT_FILE_BASE}.fl";
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXFileReference section */
+		32DBCF6D0370B57F00C91783 /* animata_prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = animata_prefix.pch; path = src/animata_prefix.pch; sourceTree = "<group>"; };
+		8D0C4E960486CD37000505A6 /* animata.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = animata.plist; path = src/resource/animata.plist; sourceTree = "<group>"; };
+		8D0C4E970486CD37000505A6 /* Animata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animata.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD2456AA0EE3E28700B929EC /* libpng.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpng.a; path = /opt/local/lib/libpng.a; sourceTree = "<absolute>"; };
+		FD2456AC0EE3E2A200B929EC /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjpeg.a; path = /opt/local/lib/libjpeg.a; sourceTree = "<absolute>"; };
+		FD2456AE0EE3E2D000B929EC /* libz.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libz.a; path = /opt/local/lib/libz.a; sourceTree = "<absolute>"; };
+		FD2456B10EE3E31000B929EC /* libfltk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfltk.a; path = /opt/local/lib/libfltk.a; sourceTree = "<absolute>"; };
+		FD2456B20EE3E31000B929EC /* libfltk_gl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfltk_gl.a; path = /opt/local/lib/libfltk_gl.a; sourceTree = "<absolute>"; };
+		FD2456B30EE3E31000B929EC /* libfltk_images.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfltk_images.a; path = /opt/local/lib/libfltk_images.a; sourceTree = "<absolute>"; };
+		FD90FC9D0ECA284200F2E603 /* animata_prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = animata_prefix.pch; path = src/animata_prefix.pch; sourceTree = "<group>"; };
+		FD90FC9E0ECA284200F2E603 /* animata.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = animata.cpp; path = src/animata.cpp; sourceTree = "<group>"; };
+		FD90FC9F0ECA284200F2E603 /* animata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = animata.h; path = src/animata.h; sourceTree = "<group>"; };
+		FD90FCA00ECA284200F2E603 /* animataUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = animataUI.cpp; path = src/animataUI.cpp; sourceTree = "<group>"; };
+		FD90FCA10ECA284200F2E603 /* animataUI.fl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = animataUI.fl; path = src/animataUI.fl; sourceTree = "<group>"; };
+		FD90FCA20ECA284200F2E603 /* animataUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = animataUI.h; path = src/animataUI.h; sourceTree = "<group>"; };
+		FD90FCA30ECA284200F2E603 /* Bone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bone.cpp; path = src/Bone.cpp; sourceTree = "<group>"; };
+		FD90FCA40ECA284200F2E603 /* Bone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bone.h; path = src/Bone.h; sourceTree = "<group>"; };
+		FD90FCA50ECA284200F2E603 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = src/Camera.cpp; sourceTree = "<group>"; };
+		FD90FCA60ECA284200F2E603 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Camera.h; path = src/Camera.h; sourceTree = "<group>"; };
+		FD90FCA70ECA284200F2E603 /* Drawable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Drawable.h; path = src/Drawable.h; sourceTree = "<group>"; };
+		FD90FCA80ECA284200F2E603 /* Face.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Face.cpp; path = src/Face.cpp; sourceTree = "<group>"; };
+		FD90FCA90ECA284200F2E603 /* Face.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Face.h; path = src/Face.h; sourceTree = "<group>"; };
+		FD90FCAA0ECA284200F2E603 /* ImageBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ImageBox.cpp; path = src/ImageBox.cpp; sourceTree = "<group>"; };
+		FD90FCAB0ECA284200F2E603 /* ImageBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageBox.h; path = src/ImageBox.h; sourceTree = "<group>"; };
+		FD90FCAC0ECA284200F2E603 /* IO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IO.cpp; path = src/IO.cpp; sourceTree = "<group>"; };
+		FD90FCAD0ECA284200F2E603 /* IO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IO.h; path = src/IO.h; sourceTree = "<group>"; };
+		FD90FCAE0ECA284200F2E603 /* Joint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Joint.cpp; path = src/Joint.cpp; sourceTree = "<group>"; };
+		FD90FCAF0ECA284200F2E603 /* Joint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Joint.h; path = src/Joint.h; sourceTree = "<group>"; };
+		FD90FCB00ECA284200F2E603 /* Layer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Layer.cpp; path = src/Layer.cpp; sourceTree = "<group>"; };
+		FD90FCB10ECA284200F2E603 /* Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Layer.h; path = src/Layer.h; sourceTree = "<group>"; };
+		FD90FCB20ECA284200F2E603 /* Matrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Matrix.cpp; path = src/Matrix.cpp; sourceTree = "<group>"; };
+		FD90FCB30ECA284200F2E603 /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Matrix.h; path = src/Matrix.h; sourceTree = "<group>"; };
+		FD90FCB40ECA284200F2E603 /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Mesh.cpp; path = src/Mesh.cpp; sourceTree = "<group>"; };
+		FD90FCB50ECA284200F2E603 /* Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mesh.h; path = src/Mesh.h; sourceTree = "<group>"; };
+		FD90FCB60ECA284200F2E603 /* OSCManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSCManager.cpp; path = src/OSCManager.cpp; sourceTree = "<group>"; };
+		FD90FCB70ECA284200F2E603 /* OSCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OSCManager.h; path = src/OSCManager.h; sourceTree = "<group>"; };
+		FD90FCB80ECA284200F2E603 /* Playback.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Playback.cpp; path = src/Playback.cpp; sourceTree = "<group>"; };
+		FD90FCB90ECA284200F2E603 /* Playback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Playback.h; path = src/Playback.h; sourceTree = "<group>"; };
+		FD90FCBA0ECA284200F2E603 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Preferences.h; path = src/Preferences.h; sourceTree = "<group>"; };
+		FD90FCBB0ECA284200F2E603 /* Primitives.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Primitives.cpp; path = src/Primitives.cpp; sourceTree = "<group>"; };
+		FD90FCBC0ECA284200F2E603 /* Primitives.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Primitives.h; path = src/Primitives.h; sourceTree = "<group>"; };
+		FD90FCBD0ECA284200F2E603 /* QuadEdge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = QuadEdge.cpp; path = src/QuadEdge.cpp; sourceTree = "<group>"; };
+		FD90FCBE0ECA284200F2E603 /* QuadEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuadEdge.h; path = src/QuadEdge.h; sourceTree = "<group>"; };
+		FD90FCC00ECA284200F2E603 /* mac.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; name = mac.r; path = src/resource/mac.r; sourceTree = "<group>"; };
+		FD90FCC20ECA284200F2E603 /* Selection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Selection.cpp; path = src/Selection.cpp; sourceTree = "<group>"; };
+		FD90FCC30ECA284200F2E603 /* Selection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Selection.h; path = src/Selection.h; sourceTree = "<group>"; };
+		FD90FCC40ECA284200F2E603 /* Skeleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Skeleton.cpp; path = src/Skeleton.cpp; sourceTree = "<group>"; };
+		FD90FCC50ECA284200F2E603 /* Skeleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Skeleton.h; path = src/Skeleton.h; sourceTree = "<group>"; };
+		FD90FCC60ECA284200F2E603 /* Subdiv.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Subdiv.cpp; path = src/Subdiv.cpp; sourceTree = "<group>"; };
+		FD90FCC70ECA284200F2E603 /* Subdiv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Subdiv.h; path = src/Subdiv.h; sourceTree = "<group>"; };
+		FD90FCC80ECA284200F2E603 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Texture.cpp; path = src/Texture.cpp; sourceTree = "<group>"; };
+		FD90FCC90ECA284200F2E603 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Texture.h; path = src/Texture.h; sourceTree = "<group>"; };
+		FD90FCCA0ECA284200F2E603 /* TextureManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TextureManager.cpp; path = src/TextureManager.cpp; sourceTree = "<group>"; };
+		FD90FCCB0ECA284200F2E603 /* TextureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextureManager.h; path = src/TextureManager.h; sourceTree = "<group>"; };
+		FD90FCCC0ECA284200F2E603 /* Transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Transform.cpp; path = src/Transform.cpp; sourceTree = "<group>"; };
+		FD90FCCD0ECA284200F2E603 /* Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Transform.h; path = src/Transform.h; sourceTree = "<group>"; };
+		FD90FCCE0ECA284200F2E603 /* Vector2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vector2D.cpp; path = src/Vector2D.cpp; sourceTree = "<group>"; };
+		FD90FCCF0ECA284200F2E603 /* Vector2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vector2D.h; path = src/Vector2D.h; sourceTree = "<group>"; };
+		FD90FCD00ECA284200F2E603 /* Vector3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vector3D.cpp; path = src/Vector3D.cpp; sourceTree = "<group>"; };
+		FD90FCD10ECA284200F2E603 /* Vector3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vector3D.h; path = src/Vector3D.h; sourceTree = "<group>"; };
+		FD90FCD20ECA284200F2E603 /* Vertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vertex.cpp; path = src/Vertex.cpp; sourceTree = "<group>"; };
+		FD90FCD30ECA284200F2E603 /* Vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vertex.h; path = src/Vertex.h; sourceTree = "<group>"; };
+		FD90FD1B0ECA2C7400F2E603 /* animata.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = animata.icns; path = data/macos/animata.icns; sourceTree = "<group>"; };
+		FD90FF2A0ECA2F7500F2E603 /* Flu_Enumerations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flu_Enumerations.h; sourceTree = "<group>"; };
+		FD90FF2B0ECA2F7500F2E603 /* flu_export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flu_export.h; sourceTree = "<group>"; };
+		FD90FF2C0ECA2F7500F2E603 /* flu_pixmaps.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = flu_pixmaps.cpp; sourceTree = "<group>"; };
+		FD90FF2D0ECA2F7500F2E603 /* flu_pixmaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flu_pixmaps.h; sourceTree = "<group>"; };
+		FD90FF2E0ECA2F7500F2E603 /* Flu_Tree_Browser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Flu_Tree_Browser.cpp; sourceTree = "<group>"; };
+		FD90FF2F0ECA2F7500F2E603 /* Flu_Tree_Browser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flu_Tree_Browser.h; sourceTree = "<group>"; };
+		FD90FF300ECA2F7500F2E603 /* FluSimpleString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FluSimpleString.cpp; sourceTree = "<group>"; };
+		FD90FF310ECA2F7500F2E603 /* FluSimpleString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FluSimpleString.h; sourceTree = "<group>"; };
+		FD90FF340ECA2F7500F2E603 /* IpEndpointName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IpEndpointName.cpp; sourceTree = "<group>"; };
+		FD90FF350ECA2F7500F2E603 /* IpEndpointName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IpEndpointName.h; sourceTree = "<group>"; };
+		FD90FF360ECA2F7500F2E603 /* NetworkingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingUtils.h; sourceTree = "<group>"; };
+		FD90FF370ECA2F7500F2E603 /* PacketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketListener.h; sourceTree = "<group>"; };
+		FD90FF390ECA2F7500F2E603 /* NetworkingUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkingUtils.cpp; sourceTree = "<group>"; };
+		FD90FF3A0ECA2F7500F2E603 /* UdpSocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UdpSocket.cpp; sourceTree = "<group>"; };
+		FD90FF3B0ECA2F7500F2E603 /* TimerListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerListener.h; sourceTree = "<group>"; };
+		FD90FF3C0ECA2F7500F2E603 /* UdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UdpSocket.h; sourceTree = "<group>"; };
+		FD90FF410ECA2F7500F2E603 /* MessageMappingOscPacketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageMappingOscPacketListener.h; sourceTree = "<group>"; };
+		FD90FF420ECA2F7500F2E603 /* OscException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscException.h; sourceTree = "<group>"; };
+		FD90FF430ECA2F7500F2E603 /* OscHostEndianness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscHostEndianness.h; sourceTree = "<group>"; };
+		FD90FF440ECA2F7500F2E603 /* OscOutboundPacketStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscOutboundPacketStream.cpp; sourceTree = "<group>"; };
+		FD90FF450ECA2F7500F2E603 /* OscOutboundPacketStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscOutboundPacketStream.h; sourceTree = "<group>"; };
+		FD90FF460ECA2F7500F2E603 /* OscPacketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscPacketListener.h; sourceTree = "<group>"; };
+		FD90FF470ECA2F7500F2E603 /* OscPrintReceivedElements.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscPrintReceivedElements.cpp; sourceTree = "<group>"; };
+		FD90FF480ECA2F7500F2E603 /* OscPrintReceivedElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscPrintReceivedElements.h; sourceTree = "<group>"; };
+		FD90FF490ECA2F7500F2E603 /* OscReceivedElements.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscReceivedElements.cpp; sourceTree = "<group>"; };
+		FD90FF4A0ECA2F7500F2E603 /* OscReceivedElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscReceivedElements.h; sourceTree = "<group>"; };
+		FD90FF4B0ECA2F7500F2E603 /* OscTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscTypes.cpp; sourceTree = "<group>"; };
+		FD90FF4C0ECA2F7500F2E603 /* OscTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscTypes.h; sourceTree = "<group>"; };
+		FD90FF4E0ECA2F7500F2E603 /* tinystr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinystr.cpp; sourceTree = "<group>"; };
+		FD90FF4F0ECA2F7500F2E603 /* tinystr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinystr.h; sourceTree = "<group>"; };
+		FD90FF500ECA2F7500F2E603 /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
+		FD90FF510ECA2F7500F2E603 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
+		FD90FF520ECA2F7500F2E603 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
+		FD90FF530ECA2F7500F2E603 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
+		FDD411EF0EE02FBC00AD3F71 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
+		FDD411F00EE02FBC00AD3F71 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
+		FDD411F10EE02FBC00AD3F71 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		FDD411F20EE02FBC00AD3F71 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D0C4E910486CD37000505A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDD411F30EE02FBC00AD3F71 /* ApplicationServices.framework in Frameworks */,
+				FDD411F40EE02FBC00AD3F71 /* AGL.framework in Frameworks */,
+				FDD411F50EE02FBC00AD3F71 /* OpenGL.framework in Frameworks */,
+				FDD411F60EE02FBC00AD3F71 /* Carbon.framework in Frameworks */,
+				FD2456AB0EE3E28700B929EC /* libpng.a in Frameworks */,
+				FD2456AD0EE3E2A200B929EC /* libjpeg.a in Frameworks */,
+				FD2456AF0EE3E2D000B929EC /* libz.a in Frameworks */,
+				FD2456B40EE3E31000B929EC /* libfltk.a in Frameworks */,
+				FD2456B50EE3E31000B929EC /* libfltk_gl.a in Frameworks */,
+				FD2456B60EE3E31000B929EC /* libfltk_images.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		195DF8CFFE9D517E11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D0C4E970486CD37000505A6 /* Animata.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20286C29FDCF999611CA2CEA /* Animata */ = {
+			isa = PBXGroup;
+			children = (
+				20286C2AFDCF999611CA2CEA /* src */,
+				FD90FF280ECA2F7500F2E603 /* libs */,
+				20286C2CFDCF999611CA2CEA /* resources */,
+				20286C32FDCF999611CA2CEA /* External Frameworks and Libraries */,
+				195DF8CFFE9D517E11CA2CBB /* Products */,
+			);
+			name = Animata;
+			sourceTree = "<group>";
+		};
+		20286C2AFDCF999611CA2CEA /* src */ = {
+			isa = PBXGroup;
+			children = (
+				FD90FC9D0ECA284200F2E603 /* animata_prefix.pch */,
+				FD90FC9E0ECA284200F2E603 /* animata.cpp */,
+				FD90FC9F0ECA284200F2E603 /* animata.h */,
+				FD90FCA00ECA284200F2E603 /* animataUI.cpp */,
+				FD90FCA10ECA284200F2E603 /* animataUI.fl */,
+				FD90FCA20ECA284200F2E603 /* animataUI.h */,
+				FD90FCA30ECA284200F2E603 /* Bone.cpp */,
+				FD90FCA40ECA284200F2E603 /* Bone.h */,
+				FD90FCA50ECA284200F2E603 /* Camera.cpp */,
+				FD90FCA60ECA284200F2E603 /* Camera.h */,
+				FD90FCA70ECA284200F2E603 /* Drawable.h */,
+				FD90FCA80ECA284200F2E603 /* Face.cpp */,
+				FD90FCA90ECA284200F2E603 /* Face.h */,
+				FD90FCAA0ECA284200F2E603 /* ImageBox.cpp */,
+				FD90FCAB0ECA284200F2E603 /* ImageBox.h */,
+				FD90FCAC0ECA284200F2E603 /* IO.cpp */,
+				FD90FCAD0ECA284200F2E603 /* IO.h */,
+				FD90FCAE0ECA284200F2E603 /* Joint.cpp */,
+				FD90FCAF0ECA284200F2E603 /* Joint.h */,
+				FD90FCB00ECA284200F2E603 /* Layer.cpp */,
+				FD90FCB10ECA284200F2E603 /* Layer.h */,
+				FD90FCB20ECA284200F2E603 /* Matrix.cpp */,
+				FD90FCB30ECA284200F2E603 /* Matrix.h */,
+				FD90FCB40ECA284200F2E603 /* Mesh.cpp */,
+				FD90FCB50ECA284200F2E603 /* Mesh.h */,
+				FD90FCB60ECA284200F2E603 /* OSCManager.cpp */,
+				FD90FCB70ECA284200F2E603 /* OSCManager.h */,
+				FD90FCB80ECA284200F2E603 /* Playback.cpp */,
+				FD90FCB90ECA284200F2E603 /* Playback.h */,
+				FD90FCBA0ECA284200F2E603 /* Preferences.h */,
+				FD90FCBB0ECA284200F2E603 /* Primitives.cpp */,
+				FD90FCBC0ECA284200F2E603 /* Primitives.h */,
+				FD90FCBD0ECA284200F2E603 /* QuadEdge.cpp */,
+				FD90FCBE0ECA284200F2E603 /* QuadEdge.h */,
+				FD90FCC20ECA284200F2E603 /* Selection.cpp */,
+				FD90FCC30ECA284200F2E603 /* Selection.h */,
+				FD90FCC40ECA284200F2E603 /* Skeleton.cpp */,
+				FD90FCC50ECA284200F2E603 /* Skeleton.h */,
+				FD90FCC60ECA284200F2E603 /* Subdiv.cpp */,
+				FD90FCC70ECA284200F2E603 /* Subdiv.h */,
+				FD90FCC80ECA284200F2E603 /* Texture.cpp */,
+				FD90FCC90ECA284200F2E603 /* Texture.h */,
+				FD90FCCA0ECA284200F2E603 /* TextureManager.cpp */,
+				FD90FCCB0ECA284200F2E603 /* TextureManager.h */,
+				FD90FCCC0ECA284200F2E603 /* Transform.cpp */,
+				FD90FCCD0ECA284200F2E603 /* Transform.h */,
+				FD90FCCE0ECA284200F2E603 /* Vector2D.cpp */,
+				FD90FCCF0ECA284200F2E603 /* Vector2D.h */,
+				FD90FCD00ECA284200F2E603 /* Vector3D.cpp */,
+				FD90FCD10ECA284200F2E603 /* Vector3D.h */,
+				FD90FCD20ECA284200F2E603 /* Vertex.cpp */,
+				FD90FCD30ECA284200F2E603 /* Vertex.h */,
+				32DBCF6D0370B57F00C91783 /* animata_prefix.pch */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		20286C2CFDCF999611CA2CEA /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				FD90FD1B0ECA2C7400F2E603 /* animata.icns */,
+				FD90FCC00ECA284200F2E603 /* mac.r */,
+				8D0C4E960486CD37000505A6 /* animata.plist */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		20286C32FDCF999611CA2CEA /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				FD2456B10EE3E31000B929EC /* libfltk.a */,
+				FD2456B20EE3E31000B929EC /* libfltk_gl.a */,
+				FD2456B30EE3E31000B929EC /* libfltk_images.a */,
+				FD2456AE0EE3E2D000B929EC /* libz.a */,
+				FD2456AC0EE3E2A200B929EC /* libjpeg.a */,
+				FD2456AA0EE3E28700B929EC /* libpng.a */,
+				FDD411EF0EE02FBC00AD3F71 /* ApplicationServices.framework */,
+				FDD411F00EE02FBC00AD3F71 /* AGL.framework */,
+				FDD411F10EE02FBC00AD3F71 /* OpenGL.framework */,
+				FDD411F20EE02FBC00AD3F71 /* Carbon.framework */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		FD90FF280ECA2F7500F2E603 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				FD90FF290ECA2F7500F2E603 /* FLU */,
+				FD90FF320ECA2F7500F2E603 /* oscpack */,
+				FD90FF4D0ECA2F7500F2E603 /* tinyxml */,
+			);
+			name = libs;
+			path = src/libs;
+			sourceTree = "<group>";
+		};
+		FD90FF290ECA2F7500F2E603 /* FLU */ = {
+			isa = PBXGroup;
+			children = (
+				FD90FF2A0ECA2F7500F2E603 /* Flu_Enumerations.h */,
+				FD90FF2B0ECA2F7500F2E603 /* flu_export.h */,
+				FD90FF2C0ECA2F7500F2E603 /* flu_pixmaps.cpp */,
+				FD90FF2D0ECA2F7500F2E603 /* flu_pixmaps.h */,
+				FD90FF2E0ECA2F7500F2E603 /* Flu_Tree_Browser.cpp */,
+				FD90FF2F0ECA2F7500F2E603 /* Flu_Tree_Browser.h */,
+				FD90FF300ECA2F7500F2E603 /* FluSimpleString.cpp */,
+				FD90FF310ECA2F7500F2E603 /* FluSimpleString.h */,
+			);
+			path = FLU;
+			sourceTree = "<group>";
+		};
+		FD90FF320ECA2F7500F2E603 /* oscpack */ = {
+			isa = PBXGroup;
+			children = (
+				FD90FF330ECA2F7500F2E603 /* ip */,
+				FD90FF400ECA2F7500F2E603 /* osc */,
+			);
+			path = oscpack;
+			sourceTree = "<group>";
+		};
+		FD90FF330ECA2F7500F2E603 /* ip */ = {
+			isa = PBXGroup;
+			children = (
+				FD90FF340ECA2F7500F2E603 /* IpEndpointName.cpp */,
+				FD90FF350ECA2F7500F2E603 /* IpEndpointName.h */,
+				FD90FF360ECA2F7500F2E603 /* NetworkingUtils.h */,
+				FD90FF370ECA2F7500F2E603 /* PacketListener.h */,
+				FD90FF380ECA2F7500F2E603 /* posix */,
+				FD90FF3B0ECA2F7500F2E603 /* TimerListener.h */,
+				FD90FF3C0ECA2F7500F2E603 /* UdpSocket.h */,
+			);
+			path = ip;
+			sourceTree = "<group>";
+		};
+		FD90FF380ECA2F7500F2E603 /* posix */ = {
+			isa = PBXGroup;
+			children = (
+				FD90FF390ECA2F7500F2E603 /* NetworkingUtils.cpp */,
+				FD90FF3A0ECA2F7500F2E603 /* UdpSocket.cpp */,
+			);
+			path = posix;
+			sourceTree = "<group>";
+		};
+		FD90FF400ECA2F7500F2E603 /* osc */ = {
+			isa = PBXGroup;
+			children = (
+				FD90FF410ECA2F7500F2E603 /* MessageMappingOscPacketListener.h */,
+				FD90FF420ECA2F7500F2E603 /* OscException.h */,
+				FD90FF430ECA2F7500F2E603 /* OscHostEndianness.h */,
+				FD90FF440ECA2F7500F2E603 /* OscOutboundPacketStream.cpp */,
+				FD90FF450ECA2F7500F2E603 /* OscOutboundPacketStream.h */,
+				FD90FF460ECA2F7500F2E603 /* OscPacketListener.h */,
+				FD90FF470ECA2F7500F2E603 /* OscPrintReceivedElements.cpp */,
+				FD90FF480ECA2F7500F2E603 /* OscPrintReceivedElements.h */,
+				FD90FF490ECA2F7500F2E603 /* OscReceivedElements.cpp */,
+				FD90FF4A0ECA2F7500F2E603 /* OscReceivedElements.h */,
+				FD90FF4B0ECA2F7500F2E603 /* OscTypes.cpp */,
+				FD90FF4C0ECA2F7500F2E603 /* OscTypes.h */,
+			);
+			path = osc;
+			sourceTree = "<group>";
+		};
+		FD90FF4D0ECA2F7500F2E603 /* tinyxml */ = {
+			isa = PBXGroup;
+			children = (
+				FD90FF4E0ECA2F7500F2E603 /* tinystr.cpp */,
+				FD90FF4F0ECA2F7500F2E603 /* tinystr.h */,
+				FD90FF500ECA2F7500F2E603 /* tinyxml.cpp */,
+				FD90FF510ECA2F7500F2E603 /* tinyxml.h */,
+				FD90FF520ECA2F7500F2E603 /* tinyxmlerror.cpp */,
+				FD90FF530ECA2F7500F2E603 /* tinyxmlparser.cpp */,
+			);
+			path = tinyxml;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D0C4E890486CD37000505A6 /* Animata */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0E91AC508A95435008D54AB /* Build configuration list for PBXNativeTarget "Animata" */;
+			buildPhases = (
+				8D0C4E8C0486CD37000505A6 /* Resources */,
+				8D0C4E8F0486CD37000505A6 /* Sources */,
+				8D0C4E910486CD37000505A6 /* Frameworks */,
+			);
+			buildRules = (
+				5FD914BF095F51EE00976476 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = Animata;
+			productInstallPath = "$(HOME)/Applications";
+			productName = Animata;
+			productReference = 8D0C4E970486CD37000505A6 /* Animata.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20286C28FDCF999611CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C0E91AC908A95435008D54AB /* Build configuration list for PBXProject "Animata" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 1;
+			mainGroup = 20286C29FDCF999611CA2CEA /* Animata */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D0C4E890486CD37000505A6 /* Animata */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D0C4E8C0486CD37000505A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD90FD1C0ECA2C7400F2E603 /* animata.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D0C4E8F0486CD37000505A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD90FCD40ECA284200F2E603 /* animata.cpp in Sources */,
+				FD90FCD50ECA284200F2E603 /* animataUI.cpp in Sources */,
+				FD90FCD70ECA284200F2E603 /* Bone.cpp in Sources */,
+				FD90FCD80ECA284200F2E603 /* Camera.cpp in Sources */,
+				FD90FCD90ECA284200F2E603 /* Face.cpp in Sources */,
+				FD90FCDA0ECA284200F2E603 /* ImageBox.cpp in Sources */,
+				FD90FCDB0ECA284200F2E603 /* IO.cpp in Sources */,
+				FD90FCDC0ECA284200F2E603 /* Joint.cpp in Sources */,
+				FD90FCDD0ECA284200F2E603 /* Layer.cpp in Sources */,
+				FD90FCDE0ECA284200F2E603 /* Matrix.cpp in Sources */,
+				FD90FCDF0ECA284200F2E603 /* Mesh.cpp in Sources */,
+				FD90FCE00ECA284200F2E603 /* OSCManager.cpp in Sources */,
+				FD90FCE10ECA284200F2E603 /* Playback.cpp in Sources */,
+				FD90FCE20ECA284200F2E603 /* Primitives.cpp in Sources */,
+				FD90FCE30ECA284200F2E603 /* QuadEdge.cpp in Sources */,
+				FD90FCE50ECA284200F2E603 /* Selection.cpp in Sources */,
+				FD90FCE60ECA284200F2E603 /* Skeleton.cpp in Sources */,
+				FD90FCE70ECA284200F2E603 /* Subdiv.cpp in Sources */,
+				FD90FCE80ECA284200F2E603 /* Texture.cpp in Sources */,
+				FD90FCE90ECA284200F2E603 /* TextureManager.cpp in Sources */,
+				FD90FCEA0ECA284200F2E603 /* Transform.cpp in Sources */,
+				FD90FCEB0ECA284200F2E603 /* Vector2D.cpp in Sources */,
+				FD90FCEC0ECA284200F2E603 /* Vector3D.cpp in Sources */,
+				FD90FCED0ECA284200F2E603 /* Vertex.cpp in Sources */,
+				FD90FF540ECA2F7500F2E603 /* flu_pixmaps.cpp in Sources */,
+				FD90FF550ECA2F7500F2E603 /* Flu_Tree_Browser.cpp in Sources */,
+				FD90FF560ECA2F7500F2E603 /* FluSimpleString.cpp in Sources */,
+				FD90FF570ECA2F7500F2E603 /* IpEndpointName.cpp in Sources */,
+				FD90FF580ECA2F7500F2E603 /* NetworkingUtils.cpp in Sources */,
+				FD90FF590ECA2F7500F2E603 /* UdpSocket.cpp in Sources */,
+				FD90FF5C0ECA2F7500F2E603 /* OscOutboundPacketStream.cpp in Sources */,
+				FD90FF5D0ECA2F7500F2E603 /* OscPrintReceivedElements.cpp in Sources */,
+				FD90FF5E0ECA2F7500F2E603 /* OscReceivedElements.cpp in Sources */,
+				FD90FF5F0ECA2F7500F2E603 /* OscTypes.cpp in Sources */,
+				FD90FF600ECA2F7500F2E603 /* tinystr.cpp in Sources */,
+				FD90FF610ECA2F7500F2E603 /* tinyxml.cpp in Sources */,
+				FD90FF620ECA2F7500F2E603 /* tinyxmlerror.cpp in Sources */,
+				FD90FF630ECA2F7500F2E603 /* tinyxmlparser.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C0E91AC608A95435008D54AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = src/Animata_Prefix.pch;
+				INFOPLIST_FILE = data/macos/animata.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					/opt/local/lib,
+					"$(LIBRARY_SEARCH_PATHS)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-c",
+					"-Wall",
+					"-Wno-unknown-pragmas",
+					"-Wno-long-long",
+					"-pedantic",
+					"-Wno-format",
+					"-DTIXML_USE_STL",
+					"-DOSC_HOST_LITTLE_ENDIAN",
+					"-DANIMATA_MAJOR_VERSION=0",
+					"-DANIMATA_MINOR_VERSION=004",
+					"-Wno-variadic-macros",
+					"-ggdb2",
+					"-O0",
+					"-DDEBUG=1",
+					"$(OTHER_CFLAGS)",
+				);
+				OTHER_LDFLAGS = "$(OTHER_LDFLAGS)";
+				PRODUCT_NAME = Animata;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				USER_HEADER_SEARCH_PATHS = "src/libs/ src/libs/oscpack src/libs/tinyxml /opt/local/include/";
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Debug;
+		};
+		C0E91AC708A95435008D54AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = src/Animata_Prefix.pch;
+				INFOPLIST_FILE = data/macos/animata.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					/opt/local/lib,
+					"$(LIBRARY_SEARCH_PATHS)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-c",
+					"-Wall",
+					"-Wno-unknown-pragmas",
+					"-Wno-long-long",
+					"-pedantic",
+					"-Wno-format",
+					"-DTIXML_USE_STL",
+					"-DOSC_HOST_LITTLE_ENDIAN",
+					"-DANIMATA_MAJOR_VERSION=0",
+					"-DANIMATA_MINOR_VERSION=004",
+					"-Wno-variadic-macros",
+					"-ggdb2",
+					"-O0",
+					"-DDEBUG=1",
+					"$(OTHER_CFLAGS)",
+				);
+				OTHER_LDFLAGS = "$(OTHER_LDFLAGS)";
+				PRODUCT_NAME = Animata;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				USER_HEADER_SEARCH_PATHS = "src/libs/ src/libs/oscpack src/libs/tinyxml /opt/local/include/";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C0E91ACA08A95435008D54AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = "$(LIBRARY_SEARCH_PATHS)";
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = "";
+			};
+			name = Debug;
+		};
+		C0E91ACB08A95435008D54AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = "$(LIBRARY_SEARCH_PATHS)";
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C0E91AC508A95435008D54AB /* Build configuration list for PBXNativeTarget "Animata" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0E91AC608A95435008D54AB /* Debug */,
+				C0E91AC708A95435008D54AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0E91AC908A95435008D54AB /* Build configuration list for PBXProject "Animata" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0E91ACA08A95435008D54AB /* Debug */,
+				C0E91ACB08A95435008D54AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 20286C28FDCF999611CA2CEA /* Project object */;
+}

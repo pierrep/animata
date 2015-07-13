@@ -1,0 +1,1551 @@
+# depslib dependency file v1.0
+1378716964 source:/home/grimus/code/animata/src/animata.cpp
+	<math.h>
+	<float.h>
+	<unistd.h>
+	<algorithm>
+	<iterator>
+	"animata.h"
+	"animataUI.h"
+	"Transform.h"
+
+1378716645 /home/grimus/code/animata/src/animata.h
+	<OPENGL/gl.h>
+	<OPENGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<float.h>
+	<pthread.h>
+	<FL/Fl.H>
+	<FL/Fl_Gl_Window.H>
+	"Mesh.h"
+	"Skeleton.h"
+	"Selection.h"
+	"TextureManager.h"
+	"Primitives.h"
+	"Layer.h"
+	"IO.h"
+	"Camera.h"
+	"OSCManager.h"
+	"ImageBox.h"
+	"Preferences.h"
+
+1378793334 /home/grimus/code/animata/src/Mesh.h
+	<vector>
+	"Vertex.h"
+	"Face.h"
+	"Joint.h"
+	"Texture.h"
+	"ADrawable.h"
+
+1374216646 /home/grimus/code/animata/src/Vertex.h
+	"Vector2D.h"
+
+1374216646 /home/grimus/code/animata/src/Vector2D.h
+
+1374216642 /home/grimus/code/animata/src/Face.h
+	"Vertex.h"
+	"Texture.h"
+
+1374216642 /home/grimus/code/animata/src/Texture.h
+	<OPENGL/gl.h>
+	<OPENGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	"Vector2D.h"
+
+1374216646 /home/grimus/code/animata/src/Joint.h
+
+1374216646 /home/grimus/code/animata/src/Drawable.h
+
+1378793334 /home/grimus/code/animata/src/Skeleton.h
+	<float.h>
+	<vector>
+	"Vector2D.h"
+	"Joint.h"
+	"Bone.h"
+	"Preferences.h"
+
+1374216642 /home/grimus/code/animata/src/Bone.h
+	"Mesh.h"
+	"Joint.h"
+
+1374216642 /home/grimus/code/animata/src/Preferences.h
+
+1378796297 /home/grimus/code/animata/src/Selection.h
+	<OPENGL/gl.h>
+	<OPENGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	"animata.h"
+	"Camera.h"
+	"Layer.h"
+	"TextureManager.h"
+
+1374216642 /home/grimus/code/animata/src/Camera.h
+	"Vector3D.h"
+
+1374216642 /home/grimus/code/animata/src/Vector3D.h
+
+1374216640 /home/grimus/code/animata/src/Layer.h
+	"Skeleton.h"
+	"Mesh.h"
+	"Matrix.h"
+
+1374216638 /home/grimus/code/animata/src/Matrix.h
+
+1374216642 /home/grimus/code/animata/src/TextureManager.h
+	<vector>
+	"Texture.h"
+	"ImageBox.h"
+
+1374216642 /home/grimus/code/animata/src/ImageBox.h
+	<FL/Fl_Box.H>
+	<FL/Fl_Image.H>
+	"Texture.h"
+
+1374216638 /home/grimus/code/animata/src/Primitives.h
+	"Bone.h"
+	"Joint.h"
+
+1374216640 /home/grimus/code/animata/src/IO.h
+	<vector>
+	"tinyxml.h"
+	"Layer.h"
+
+1374216644 /home/grimus/code/animata/src/libs/tinyxml/tinyxml.h
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<string>
+	<iostream>
+	<sstream>
+	"tinystr.h"
+
+1374216644 /home/grimus/code/animata/src/libs/tinyxml/tinystr.h
+	<assert.h>
+	<string.h>
+
+1377069862 /home/grimus/code/animata/src/OSCManager.h
+	<pthread.h>
+	<vector>
+	"osc/OscReceivedElements.h"
+	"osc/OscPacketListener.h"
+	"ip/UdpSocket.h"
+	"osc/OscOutboundPacketStream.h"
+	"ip/IpEndpointName.h"
+	"Layer.h"
+
+1362392394 /home/grimus/code/animata/src/libs/oscpack/osc/OscReceivedElements.h
+	<cassert>
+	<cstddef>
+	<cstring>
+	"OscTypes.h"
+	"OscException.h"
+
+1375609160 /home/grimus/code/animata/src/libs/oscpack/osc/OscTypes.h
+
+1359010160 /home/grimus/code/animata/src/libs/oscpack/osc/OscException.h
+	<exception>
+
+1359009918 /home/grimus/code/animata/src/libs/oscpack/osc/OscPacketListener.h
+	"OscReceivedElements.h"
+	"../ip/PacketListener.h"
+
+1359009918 /home/grimus/code/animata/src/libs/oscpack/ip/PacketListener.h
+
+1362377702 /home/grimus/code/animata/src/libs/oscpack/ip/UdpSocket.h
+	<cstring>
+	"NetworkingUtils.h"
+	"IpEndpointName.h"
+
+1359009918 /home/grimus/code/animata/src/libs/oscpack/ip/NetworkingUtils.h
+
+1359009918 /home/grimus/code/animata/src/libs/oscpack/ip/IpEndpointName.h
+
+1362386750 /home/grimus/code/animata/src/libs/oscpack/osc/OscOutboundPacketStream.h
+	<cstring>
+	"OscTypes.h"
+	"OscException.h"
+
+1375691928 /home/grimus/code/animata/src/animataUI.h
+	<FL/Fl.H>
+	<FL/Fl_Double_Window.H>
+	<stdlib.h>
+	"animata.h"
+	<FL/Fl_File_Chooser.H>
+	<FL/Fl_Menu_Bar.H>
+	<FL/Fl_Slider.H>
+	<math.h>
+	"Playback.h"
+	<FL/Fl_Tabs.H>
+	<FL/Fl_Group.H>
+	<FL/Fl_Button.H>
+	<FL/Fl_JPEG_Image.H>
+	<FL/Fl_PNG_Image.H>
+	"ImageBox.h"
+	<FL/Fl_Scroll.H>
+	<FL/Fl_Pack.H>
+	<vector>
+	<FL/Fl_Value_Slider.H>
+	<FL/Fl_Box.H>
+	<FL/Fl_Input.H>
+	<FL/Fl_Value_Input.H>
+	<FL/Fl_Check_Button.H>
+	<FL/Fl_Light_Button.H>
+	<FL/Fl_Dial.H>
+	"Layer.h"
+	"FLU/Flu_Tree_Browser.h"
+
+1374216646 /home/grimus/code/animata/src/Playback.h
+	<OPENGL/gl.h>
+	<OPENGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<FL/Fl.H>
+	<FL/Fl_Gl_Window.H>
+	"Camera.h"
+	"Layer.h"
+	"animata.h"
+
+1374216644 /home/grimus/code/animata/src/libs//FLU/Flu_Tree_Browser.h
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<stdint.h>
+	<FL/Fl.H>
+	<FL/Fl_Box.H>
+	<FL/Fl_Pixmap.H>
+	<FL/Fl_Image.H>
+	<FL/Fl_Scrollbar.H>
+	<FL/Fl_Group.H>
+	<FL/Fl_Menu_Button.H>
+	"FLU/Flu_Enumerations.h"
+	"FLU/FluSimpleString.h"
+	"FLU/Flu_DND.h"
+
+1374216644 /home/grimus/code/animata/src/libs//FLU/Flu_Enumerations.h
+	"FLU/flu_export.h"
+
+1374216644 /home/grimus/code/animata/src/libs//FLU/flu_export.h
+
+1374216644 /home/grimus/code/animata/src/libs//FLU/FluSimpleString.h
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<ctype.h>
+	"FLU/Flu_Enumerations.h"
+
+1374216640 /home/grimus/code/animata/src/Transform.h
+	<OPENGL/gl.h>
+	<OPENGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	"Vector3D.h"
+
+1378796276 source:/home/grimus/code/animata/src/animataUI.cpp
+	"animataUI.h"
+	<X11/xpm.h>
+	"icon.xpm"
+	<FL/x.H>
+	<FL/fl_draw.H>
+
+1374216646 source:/home/grimus/code/animata/src/Bone.cpp
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<math.h>
+	<assert.h>
+	"animata.h"
+	"animataUI.h"
+	"Bone.h"
+	"Primitives.h"
+
+1374216646 source:/home/grimus/code/animata/src/Camera.cpp
+	<math.h>
+	<stdio.h>
+	<OPENGL/gl.h>
+	<OPENGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	"Camera.h"
+
+1374216638 source:/home/grimus/code/animata/src/Face.cpp
+	"Face.h"
+
+1374216646 source:/home/grimus/code/animata/src/ImageBox.cpp
+	<stdio.h>
+	<string.h>
+	<limits.h>
+	"ImageBox.h"
+	"animataUI.h"
+
+1374216642 source:/home/grimus/code/animata/src/IO.cpp
+	<libgen.h>
+	<algorithm>
+	<iterator>
+	"animata.h"
+	"animataUI.h"
+	"IO.h"
+
+1374216640 source:/home/grimus/code/animata/src/Joint.cpp
+	<stdio.h>
+	<string.h>
+	<math.h>
+	"Joint.h"
+	"Primitives.h"
+	"animata.h"
+	"animataUI.h"
+
+1374216646 source:/home/grimus/code/animata/src/Layer.cpp
+	<stdio.h>
+	<float.h>
+	<algorithm>
+	"Layer.h"
+	"animata.h"
+	"animataUI.h"
+	"Transform.h"
+
+1374216644 source:/home/grimus/code/animata/src/libs/FLU/flu_pixmaps.cpp
+	"FLU/flu_pixmaps.h"
+
+1374216644 /home/grimus/code/animata/src/libs//FLU/flu_pixmaps.h
+	"FLU/flu_export.h"
+
+1374216644 source:/home/grimus/code/animata/src/libs/FLU/Flu_Tree_Browser.cpp
+	<FL/Fl.H>
+	<FL/fl_draw.H>
+	<FL/math.h>
+	<stdlib.h>
+	"FLU/Flu_Tree_Browser.h"
+	"FLU/flu_pixmaps.h"
+
+1374216644 source:/home/grimus/code/animata/src/libs/FLU/FluSimpleString.cpp
+	"FLU/FluSimpleString.h"
+
+1359011512 source:/home/grimus/code/animata/src/libs/oscpack/ip/IpEndpointName.cpp
+	"IpEndpointName.h"
+	<cstdio>
+	"NetworkingUtils.h"
+
+1359011512 source:/home/grimus/code/animata/src/libs/oscpack/ip/posix/NetworkingUtils.cpp
+	"ip/NetworkingUtils.h"
+	<netdb.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<cstring>
+
+1364803150 source:/home/grimus/code/animata/src/libs/oscpack/ip/posix/UdpSocket.cpp
+	"ip/UdpSocket.h"
+	<pthread.h>
+	<unistd.h>
+	<stdlib.h>
+	<stdio.h>
+	<netdb.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<sys/time.h>
+	<netinet/in.h>
+	<signal.h>
+	<math.h>
+	<errno.h>
+	<string.h>
+	<algorithm>
+	<cassert>
+	<cstring>
+	<stdexcept>
+	<vector>
+	"ip/PacketListener.h"
+	"ip/TimerListener.h"
+
+1359009918 /home/grimus/code/animata/src/libs/oscpack/ip/TimerListener.h
+
+1362392226 source:/home/grimus/code/animata/src/libs/oscpack/osc/OscOutboundPacketStream.cpp
+	"OscOutboundPacketStream.h"
+	<malloc.h>
+	<stdlib.h>
+	<cassert>
+	<cstring>
+	<cstddef>
+	"OscHostEndianness.h"
+
+1362550218 /home/grimus/code/animata/src/libs/oscpack/osc/OscHostEndianness.h
+
+1362392226 source:/home/grimus/code/animata/src/libs/oscpack/osc/OscPrintReceivedElements.cpp
+	"OscPrintReceivedElements.h"
+	<cstring>
+	<ctime>
+	<iostream>
+	<iomanip>
+
+1359011512 /home/grimus/code/animata/src/libs/oscpack/osc/OscPrintReceivedElements.h
+	<iosfwd>
+	"OscReceivedElements.h"
+
+1362975476 source:/home/grimus/code/animata/src/libs/oscpack/osc/OscReceivedElements.cpp
+	"OscReceivedElements.h"
+	"OscHostEndianness.h"
+	<cstddef>
+
+1362386750 source:/home/grimus/code/animata/src/libs/oscpack/osc/OscTypes.cpp
+	"OscTypes.h"
+
+1374216644 source:/home/grimus/code/animata/src/libs/tinyxml/tinystr.cpp
+	"tinystr.h"
+
+1374216644 source:/home/grimus/code/animata/src/libs/tinyxml/tinyxml.cpp
+	<ctype.h>
+	<sstream>
+	<iostream>
+	"tinyxml.h"
+
+1374216644 source:/home/grimus/code/animata/src/libs/tinyxml/tinyxmlerror.cpp
+	"tinyxml.h"
+
+1374216644 source:/home/grimus/code/animata/src/libs/tinyxml/tinyxmlparser.cpp
+	<ctype.h>
+	<stddef.h>
+	"tinyxml.h"
+	<windows.h>
+
+1374216642 source:/home/grimus/code/animata/src/Matrix.cpp
+	"Matrix.h"
+	"Vector3D.h"
+	<stdio.h>
+	<math.h>
+
+1374216646 source:/home/grimus/code/animata/src/Mesh.cpp
+	<stdio.h>
+	<iostream>
+	<algorithm>
+	"animata.h"
+	"animataUI.h"
+	"Primitives.h"
+	"Mesh.h"
+	"Subdiv.h"
+	"Transform.h"
+	<OPENGL/gl.h>
+	<GL/gl.h>
+
+1374216638 /home/grimus/code/animata/src/Subdiv.h
+	"Vector2D.h"
+	"QuadEdge.h"
+	"Mesh.h"
+
+1374216642 /home/grimus/code/animata/src/QuadEdge.h
+	<vector>
+
+1378717020 source:/home/grimus/code/animata/src/OSCManager.cpp
+	<iostream>
+	<unistd.h>
+	"animata.h"
+	"animataUI.h"
+	"OSCManager.h"
+
+1378535688 source:/home/grimus/code/animata/src/Playback.cpp
+	"Playback.h"
+	"animataUI.h"
+
+1374216642 source:/home/grimus/code/animata/src/Primitives.cpp
+	<math.h>
+	"animata.h"
+	"Primitives.h"
+	"Bone.h"
+	"Joint.h"
+
+1374216646 source:/home/grimus/code/animata/src/QuadEdge.cpp
+	<stdio.h>
+	<stdlib.h>
+	<vector>
+	"QuadEdge.h"
+
+1378793334 source:/home/grimus/code/animata/src/Selection.cpp
+	<stdio.h>
+	"Selection.h"
+	"Transform.h"
+
+1374216646 source:/home/grimus/code/animata/src/Skeleton.cpp
+	<stdio.h>
+	"animata.h"
+	"animataUI.h"
+	"Primitives.h"
+	"Skeleton.h"
+	"Transform.h"
+
+1374216642 source:/home/grimus/code/animata/src/Subdiv.cpp
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<float.h>
+	"Subdiv.h"
+
+1374216638 source:/home/grimus/code/animata/src/Texture.cpp
+	"Texture.h"
+	<stdio.h>
+	<math.h>
+
+1378182642 source:/home/grimus/code/animata/src/TextureManager.cpp
+	<stdio.h>
+	<string.h>
+	"TextureManager.h"
+	"animata.h"
+	"animataUI.h"
+	"Transform.h"
+
+1374216646 source:/home/grimus/code/animata/src/Transform.cpp
+	"Transform.h"
+
+1374216642 source:/home/grimus/code/animata/src/Vector2D.cpp
+	<math.h>
+	<float.h>
+	"Vector2D.h"
+
+1374216646 source:/home/grimus/code/animata/src/Vector3D.cpp
+	<math.h>
+	<float.h>
+	"Vector3D.h"
+	"Matrix.h"
+
+1374216640 source:/home/grimus/code/animata/src/Vertex.cpp
+	"Vertex.h"
+	"Primitives.h"
+
+1378793277 /home/grimus/code/animata/src/ADrawable.h
+
+1378780524 /home/grimus/code/animata/src/icon.xpm
+
+1374216646 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/Bone.cpp
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<math.h>
+	<assert.h>
+	"animata.h"
+	"animataUI.h"
+	"Bone.h"
+	"Primitives.h"
+
+1378716645 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/animata.h
+	<OPENGL/gl.h>
+	<OPENGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<float.h>
+	<pthread.h>
+	<FL/Fl.H>
+	<FL/Fl_Gl_Window.H>
+	"Mesh.h"
+	"Skeleton.h"
+	"Selection.h"
+	"TextureManager.h"
+	"Primitives.h"
+	"Layer.h"
+	"IO.h"
+	"Camera.h"
+	"OSCManager.h"
+	"ImageBox.h"
+	"Preferences.h"
+
+1378793334 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/Mesh.h
+	<vector>
+	"Vertex.h"
+	"Face.h"
+	"Joint.h"
+	"Texture.h"
+	"ADrawable.h"
+
+1374216646 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/Vertex.h
+	"Vector2D.h"
+
+1374216646 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/Vector2D.h
+
+1374216642 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/Face.h
+	"Vertex.h"
+	"Texture.h"
+
+1374216642 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/Texture.h
+	<OPENGL/gl.h>
+	<OPENGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	"Vector2D.h"
+
+1374216646 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/Joint.h
+
+1378793277 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/ADrawable.h
+
+1378793334 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/Skeleton.h
+	<float.h>
+	<vector>
+	"Vector2D.h"
+	"Joint.h"
+	"Bone.h"
+	"Preferences.h"
+
+1374216642 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/Bone.h
+	"Mesh.h"
+	"Joint.h"
+
+1374216642 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/Preferences.h
+
+1378796297 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/Selection.h
+	<OPENGL/gl.h>
+	<OPENGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	"animata.h"
+	"Camera.h"
+	"Layer.h"
+	"TextureManager.h"
+
+1374216642 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/Camera.h
+	"Vector3D.h"
+
+1374216642 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/Vector3D.h
+
+1374216640 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/Layer.h
+	"Skeleton.h"
+	"Mesh.h"
+	"Matrix.h"
+
+1374216638 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/Matrix.h
+
+1374216642 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/TextureManager.h
+	<vector>
+	"Texture.h"
+	"ImageBox.h"
+
+1374216642 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/ImageBox.h
+	<FL/Fl_Box.H>
+	<FL/Fl_Image.H>
+	"Texture.h"
+
+1374216638 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/Primitives.h
+	"Bone.h"
+	"Joint.h"
+
+1374216640 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/IO.h
+	<vector>
+	"tinyxml.h"
+	"Layer.h"
+
+1374216644 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/tinyxml/tinyxml.h
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<string>
+	<iostream>
+	<sstream>
+	"tinystr.h"
+
+1374216644 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/tinyxml/tinystr.h
+	<assert.h>
+	<string.h>
+
+1377069862 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/OSCManager.h
+	<pthread.h>
+	<vector>
+	"osc/OscReceivedElements.h"
+	"osc/OscPacketListener.h"
+	"ip/UdpSocket.h"
+	"osc/OscOutboundPacketStream.h"
+	"ip/IpEndpointName.h"
+	"Layer.h"
+
+1362392394 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/oscpack/osc/OscReceivedElements.h
+	<cassert>
+	<cstddef>
+	<cstring>
+	"OscTypes.h"
+	"OscException.h"
+
+1375609160 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/oscpack/osc/OscTypes.h
+
+1359010160 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/oscpack/osc/OscException.h
+	<exception>
+
+1359009918 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/oscpack/osc/OscPacketListener.h
+	"OscReceivedElements.h"
+	"../ip/PacketListener.h"
+
+1359009918 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/oscpack/ip/PacketListener.h
+
+1362377702 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/oscpack/ip/UdpSocket.h
+	<cstring>
+	"NetworkingUtils.h"
+	"IpEndpointName.h"
+
+1359009918 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/oscpack/ip/NetworkingUtils.h
+
+1359009918 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/oscpack/ip/IpEndpointName.h
+
+1362386750 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/oscpack/osc/OscOutboundPacketStream.h
+	<cstring>
+	"OscTypes.h"
+	"OscException.h"
+
+1375691928 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/animataUI.h
+	<FL/Fl.H>
+	<FL/Fl_Double_Window.H>
+	<stdlib.h>
+	"animata.h"
+	<FL/Fl_File_Chooser.H>
+	<FL/Fl_Menu_Bar.H>
+	<FL/Fl_Slider.H>
+	<math.h>
+	"Playback.h"
+	<FL/Fl_Tabs.H>
+	<FL/Fl_Group.H>
+	<FL/Fl_Button.H>
+	<FL/Fl_JPEG_Image.H>
+	<FL/Fl_PNG_Image.H>
+	"ImageBox.h"
+	<FL/Fl_Scroll.H>
+	<FL/Fl_Pack.H>
+	<vector>
+	<FL/Fl_Value_Slider.H>
+	<FL/Fl_Box.H>
+	<FL/Fl_Input.H>
+	<FL/Fl_Value_Input.H>
+	<FL/Fl_Check_Button.H>
+	<FL/Fl_Light_Button.H>
+	<FL/Fl_Dial.H>
+	"Layer.h"
+	"FLU/Flu_Tree_Browser.h"
+
+1374216646 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/Playback.h
+	<OPENGL/gl.h>
+	<OPENGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<FL/Fl.H>
+	<FL/Fl_Gl_Window.H>
+	"Camera.h"
+	"Layer.h"
+	"animata.h"
+
+1374216644 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs//FLU/Flu_Tree_Browser.h
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<stdint.h>
+	<FL/Fl.H>
+	<FL/Fl_Box.H>
+	<FL/Fl_Pixmap.H>
+	<FL/Fl_Image.H>
+	<FL/Fl_Scrollbar.H>
+	<FL/Fl_Group.H>
+	<FL/Fl_Menu_Button.H>
+	"FLU/Flu_Enumerations.h"
+	"FLU/FluSimpleString.h"
+	"FLU/Flu_DND.h"
+
+1374216644 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs//FLU/Flu_Enumerations.h
+	"FLU/flu_export.h"
+
+1374216644 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs//FLU/flu_export.h
+
+1374216644 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs//FLU/FluSimpleString.h
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<ctype.h>
+	"FLU/Flu_Enumerations.h"
+
+1374216646 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/Camera.cpp
+	<math.h>
+	<stdio.h>
+	<OPENGL/gl.h>
+	<OPENGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	"Camera.h"
+
+1374216638 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/Face.cpp
+	"Face.h"
+
+1374216642 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/IO.cpp
+	<libgen.h>
+	<algorithm>
+	<iterator>
+	"animata.h"
+	"animataUI.h"
+	"IO.h"
+
+1374216646 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/ImageBox.cpp
+	<stdio.h>
+	<string.h>
+	<limits.h>
+	"ImageBox.h"
+	"animataUI.h"
+
+1374216640 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/Joint.cpp
+	<stdio.h>
+	<string.h>
+	<math.h>
+	"Joint.h"
+	"Primitives.h"
+	"animata.h"
+	"animataUI.h"
+
+1374216646 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/Layer.cpp
+	<stdio.h>
+	<float.h>
+	<algorithm>
+	"Layer.h"
+	"animata.h"
+	"animataUI.h"
+	"Transform.h"
+
+1374216640 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/Transform.h
+	<OPENGL/gl.h>
+	<OPENGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	"Vector3D.h"
+
+1374216642 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/Matrix.cpp
+	"Matrix.h"
+	"Vector3D.h"
+	<stdio.h>
+	<math.h>
+
+1374216646 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/Mesh.cpp
+	<stdio.h>
+	<iostream>
+	<algorithm>
+	"animata.h"
+	"animataUI.h"
+	"Primitives.h"
+	"Mesh.h"
+	"Subdiv.h"
+	"Transform.h"
+	<OPENGL/gl.h>
+	<GL/gl.h>
+
+1374216638 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/Subdiv.h
+	"Vector2D.h"
+	"QuadEdge.h"
+	"Mesh.h"
+
+1374216642 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/QuadEdge.h
+	<vector>
+
+1378535688 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/Playback.cpp
+	"Playback.h"
+	"animataUI.h"
+
+1374216642 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/Primitives.cpp
+	<math.h>
+	"animata.h"
+	"Primitives.h"
+	"Bone.h"
+	"Joint.h"
+
+1374216646 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/QuadEdge.cpp
+	<stdio.h>
+	<stdlib.h>
+	<vector>
+	"QuadEdge.h"
+
+1378793334 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/Selection.cpp
+	<stdio.h>
+	"Selection.h"
+	"Transform.h"
+
+1374216646 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/Skeleton.cpp
+	<stdio.h>
+	"animata.h"
+	"animataUI.h"
+	"Primitives.h"
+	"Skeleton.h"
+	"Transform.h"
+
+1374216642 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/Subdiv.cpp
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<float.h>
+	"Subdiv.h"
+
+1374216638 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/Texture.cpp
+	"Texture.h"
+	<stdio.h>
+	<math.h>
+
+1378182642 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/TextureManager.cpp
+	<stdio.h>
+	<string.h>
+	"TextureManager.h"
+	"animata.h"
+	"animataUI.h"
+	"Transform.h"
+
+1374216646 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/Transform.cpp
+	"Transform.h"
+
+1374216642 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/Vector2D.cpp
+	<math.h>
+	<float.h>
+	"Vector2D.h"
+
+1374216646 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/Vector3D.cpp
+	<math.h>
+	<float.h>
+	"Vector3D.h"
+	"Matrix.h"
+
+1374216640 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/Vertex.cpp
+	"Vertex.h"
+	"Primitives.h"
+
+1378716964 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/animata.cpp
+	<math.h>
+	<float.h>
+	<unistd.h>
+	<algorithm>
+	<iterator>
+	"animata.h"
+	"animataUI.h"
+	"Transform.h"
+
+1391932286 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/OSCManager.cpp
+	<iostream>
+	<unistd.h>
+	"animata.h"
+	"animataUI.h"
+	"OSCManager.h"
+
+1378796981 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/animataUI.cpp
+	"animataUI.h"
+	<FL/x.H>
+	<X11/xpm.h>
+	"animata.xpm"
+	<FL/fl_draw.H>
+
+1378780524 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/animata.xpm
+
+1374216644 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/FLU/FluSimpleString.cpp
+	"FLU/FluSimpleString.h"
+
+1374216644 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/FLU/Flu_Tree_Browser.cpp
+	<FL/Fl.H>
+	<FL/fl_draw.H>
+	<FL/math.h>
+	<stdlib.h>
+	"FLU/Flu_Tree_Browser.h"
+	"FLU/flu_pixmaps.h"
+
+1374216644 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs//FLU/flu_pixmaps.h
+	"FLU/flu_export.h"
+
+1374216644 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/FLU/flu_pixmaps.cpp
+	"FLU/flu_pixmaps.h"
+
+1359011512 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/oscpack/ip/IpEndpointName.cpp
+	"IpEndpointName.h"
+	<cstdio>
+	"NetworkingUtils.h"
+
+1359011512 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/oscpack/ip/posix/NetworkingUtils.cpp
+	"ip/NetworkingUtils.h"
+	<netdb.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<cstring>
+
+1364803150 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/oscpack/ip/posix/UdpSocket.cpp
+	"ip/UdpSocket.h"
+	<pthread.h>
+	<unistd.h>
+	<stdlib.h>
+	<stdio.h>
+	<netdb.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<sys/time.h>
+	<netinet/in.h>
+	<signal.h>
+	<math.h>
+	<errno.h>
+	<string.h>
+	<algorithm>
+	<cassert>
+	<cstring>
+	<stdexcept>
+	<vector>
+	"ip/PacketListener.h"
+	"ip/TimerListener.h"
+
+1359009918 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/oscpack/ip/TimerListener.h
+
+1362392226 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/oscpack/osc/OscOutboundPacketStream.cpp
+	"OscOutboundPacketStream.h"
+	<malloc.h>
+	<stdlib.h>
+	<cassert>
+	<cstring>
+	<cstddef>
+	"OscHostEndianness.h"
+
+1362550218 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/oscpack/osc/OscHostEndianness.h
+
+1362392226 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/oscpack/osc/OscPrintReceivedElements.cpp
+	"OscPrintReceivedElements.h"
+	<cstring>
+	<ctime>
+	<iostream>
+	<iomanip>
+
+1359011512 /media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/oscpack/osc/OscPrintReceivedElements.h
+	<iosfwd>
+	"OscReceivedElements.h"
+
+1362975476 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/oscpack/osc/OscReceivedElements.cpp
+	"OscReceivedElements.h"
+	"OscHostEndianness.h"
+	<cstddef>
+
+1362386750 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/oscpack/osc/OscTypes.cpp
+	"OscTypes.h"
+
+1374216644 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/tinyxml/tinystr.cpp
+	"tinystr.h"
+
+1374216644 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/tinyxml/tinyxml.cpp
+	<ctype.h>
+	<sstream>
+	<iostream>
+	"tinyxml.h"
+
+1374216644 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/tinyxml/tinyxmlerror.cpp
+	"tinyxml.h"
+
+1374216644 source:/media/Fatso/Linux backup/code/Electric Puppet/animata/src/libs/tinyxml/tinyxmlparser.cpp
+	<ctype.h>
+	<stddef.h>
+	"tinyxml.h"
+	<windows.h>
+
+1378716964 source:/home/grimus/code/ElectricPuppet/animata/src/animata.cpp
+	<math.h>
+	<float.h>
+	<unistd.h>
+	<algorithm>
+	<iterator>
+	"animata.h"
+	"animataUI.h"
+	"Transform.h"
+
+1378716645 /home/grimus/code/ElectricPuppet/animata/src/animata.h
+	<OPENGL/gl.h>
+	<OPENGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<float.h>
+	<pthread.h>
+	<FL/Fl.H>
+	<FL/Fl_Gl_Window.H>
+	"Mesh.h"
+	"Skeleton.h"
+	"Selection.h"
+	"TextureManager.h"
+	"Primitives.h"
+	"Layer.h"
+	"IO.h"
+	"Camera.h"
+	"OSCManager.h"
+	"ImageBox.h"
+	"Preferences.h"
+
+1378793334 /home/grimus/code/ElectricPuppet/animata/src/Mesh.h
+	<vector>
+	"Vertex.h"
+	"Face.h"
+	"Joint.h"
+	"Texture.h"
+	"ADrawable.h"
+
+1374216646 /home/grimus/code/ElectricPuppet/animata/src/Vertex.h
+	"Vector2D.h"
+
+1374216646 /home/grimus/code/ElectricPuppet/animata/src/Vector2D.h
+
+1374216642 /home/grimus/code/ElectricPuppet/animata/src/Face.h
+	"Vertex.h"
+	"Texture.h"
+
+1374216642 /home/grimus/code/ElectricPuppet/animata/src/Texture.h
+	<OPENGL/gl.h>
+	<OPENGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	"Vector2D.h"
+
+1374216646 /home/grimus/code/ElectricPuppet/animata/src/Joint.h
+
+1378793277 /home/grimus/code/ElectricPuppet/animata/src/ADrawable.h
+
+1378793334 /home/grimus/code/ElectricPuppet/animata/src/Skeleton.h
+	<float.h>
+	<vector>
+	"Vector2D.h"
+	"Joint.h"
+	"Bone.h"
+	"Preferences.h"
+
+1374216642 /home/grimus/code/ElectricPuppet/animata/src/Bone.h
+	"Mesh.h"
+	"Joint.h"
+
+1374216642 /home/grimus/code/ElectricPuppet/animata/src/Preferences.h
+
+1378796297 /home/grimus/code/ElectricPuppet/animata/src/Selection.h
+	<OPENGL/gl.h>
+	<OPENGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	"animata.h"
+	"Camera.h"
+	"Layer.h"
+	"TextureManager.h"
+
+1374216642 /home/grimus/code/ElectricPuppet/animata/src/Camera.h
+	"Vector3D.h"
+
+1374216642 /home/grimus/code/ElectricPuppet/animata/src/Vector3D.h
+
+1374216640 /home/grimus/code/ElectricPuppet/animata/src/Layer.h
+	"Skeleton.h"
+	"Mesh.h"
+	"Matrix.h"
+
+1374216638 /home/grimus/code/ElectricPuppet/animata/src/Matrix.h
+
+1374216642 /home/grimus/code/ElectricPuppet/animata/src/TextureManager.h
+	<vector>
+	"Texture.h"
+	"ImageBox.h"
+
+1374216642 /home/grimus/code/ElectricPuppet/animata/src/ImageBox.h
+	<FL/Fl_Box.H>
+	<FL/Fl_Image.H>
+	"Texture.h"
+
+1374216638 /home/grimus/code/ElectricPuppet/animata/src/Primitives.h
+	"Bone.h"
+	"Joint.h"
+
+1374216640 /home/grimus/code/ElectricPuppet/animata/src/IO.h
+	<vector>
+	"tinyxml.h"
+	"Layer.h"
+
+1374216644 /home/grimus/code/ElectricPuppet/animata/src/libs/tinyxml/tinyxml.h
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<string>
+	<iostream>
+	<sstream>
+	"tinystr.h"
+
+1374216644 /home/grimus/code/ElectricPuppet/animata/src/libs/tinyxml/tinystr.h
+	<assert.h>
+	<string.h>
+
+1377069862 /home/grimus/code/ElectricPuppet/animata/src/OSCManager.h
+	<pthread.h>
+	<vector>
+	"osc/OscReceivedElements.h"
+	"osc/OscPacketListener.h"
+	"ip/UdpSocket.h"
+	"osc/OscOutboundPacketStream.h"
+	"ip/IpEndpointName.h"
+	"Layer.h"
+
+1362392394 /home/grimus/code/ElectricPuppet/animata/src/libs/oscpack/osc/OscReceivedElements.h
+	<cassert>
+	<cstddef>
+	<cstring>
+	"OscTypes.h"
+	"OscException.h"
+
+1375609160 /home/grimus/code/ElectricPuppet/animata/src/libs/oscpack/osc/OscTypes.h
+
+1359010160 /home/grimus/code/ElectricPuppet/animata/src/libs/oscpack/osc/OscException.h
+	<exception>
+
+1359009918 /home/grimus/code/ElectricPuppet/animata/src/libs/oscpack/osc/OscPacketListener.h
+	"OscReceivedElements.h"
+	"../ip/PacketListener.h"
+
+1359009918 /home/grimus/code/ElectricPuppet/animata/src/libs/oscpack/ip/PacketListener.h
+
+1362377702 /home/grimus/code/ElectricPuppet/animata/src/libs/oscpack/ip/UdpSocket.h
+	<cstring>
+	"NetworkingUtils.h"
+	"IpEndpointName.h"
+
+1359009918 /home/grimus/code/ElectricPuppet/animata/src/libs/oscpack/ip/NetworkingUtils.h
+
+1359009918 /home/grimus/code/ElectricPuppet/animata/src/libs/oscpack/ip/IpEndpointName.h
+
+1362386750 /home/grimus/code/ElectricPuppet/animata/src/libs/oscpack/osc/OscOutboundPacketStream.h
+	<cstring>
+	"OscTypes.h"
+	"OscException.h"
+
+1375691928 /home/grimus/code/ElectricPuppet/animata/src/animataUI.h
+	<FL/Fl.H>
+	<FL/Fl_Double_Window.H>
+	<stdlib.h>
+	"animata.h"
+	<FL/Fl_File_Chooser.H>
+	<FL/Fl_Menu_Bar.H>
+	<FL/Fl_Slider.H>
+	<math.h>
+	"Playback.h"
+	<FL/Fl_Tabs.H>
+	<FL/Fl_Group.H>
+	<FL/Fl_Button.H>
+	<FL/Fl_JPEG_Image.H>
+	<FL/Fl_PNG_Image.H>
+	"ImageBox.h"
+	<FL/Fl_Scroll.H>
+	<FL/Fl_Pack.H>
+	<vector>
+	<FL/Fl_Value_Slider.H>
+	<FL/Fl_Box.H>
+	<FL/Fl_Input.H>
+	<FL/Fl_Value_Input.H>
+	<FL/Fl_Check_Button.H>
+	<FL/Fl_Light_Button.H>
+	<FL/Fl_Dial.H>
+	"Layer.h"
+	"FLU/Flu_Tree_Browser.h"
+
+1374216646 /home/grimus/code/ElectricPuppet/animata/src/Playback.h
+	<OPENGL/gl.h>
+	<OPENGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<FL/Fl.H>
+	<FL/Fl_Gl_Window.H>
+	"Camera.h"
+	"Layer.h"
+	"animata.h"
+
+1374216644 /home/grimus/code/ElectricPuppet/animata/src/libs//FLU/Flu_Tree_Browser.h
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<stdint.h>
+	<FL/Fl.H>
+	<FL/Fl_Box.H>
+	<FL/Fl_Pixmap.H>
+	<FL/Fl_Image.H>
+	<FL/Fl_Scrollbar.H>
+	<FL/Fl_Group.H>
+	<FL/Fl_Menu_Button.H>
+	"FLU/Flu_Enumerations.h"
+	"FLU/FluSimpleString.h"
+	"FLU/Flu_DND.h"
+
+1374216644 /home/grimus/code/ElectricPuppet/animata/src/libs//FLU/Flu_Enumerations.h
+	"FLU/flu_export.h"
+
+1374216644 /home/grimus/code/ElectricPuppet/animata/src/libs//FLU/flu_export.h
+
+1374216644 /home/grimus/code/ElectricPuppet/animata/src/libs//FLU/FluSimpleString.h
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<ctype.h>
+	"FLU/Flu_Enumerations.h"
+
+1374216640 /home/grimus/code/ElectricPuppet/animata/src/Transform.h
+	<OPENGL/gl.h>
+	<OPENGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	"Vector3D.h"
+
+1378796981 source:/home/grimus/code/ElectricPuppet/animata/src/animataUI.cpp
+	"animataUI.h"
+	<FL/x.H>
+	<X11/xpm.h>
+	"animata.xpm"
+	<FL/fl_draw.H>
+
+1378780524 /home/grimus/code/ElectricPuppet/animata/src/animata.xpm
+
+1374216646 source:/home/grimus/code/ElectricPuppet/animata/src/Bone.cpp
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<math.h>
+	<assert.h>
+	"animata.h"
+	"animataUI.h"
+	"Bone.h"
+	"Primitives.h"
+
+1374216646 source:/home/grimus/code/ElectricPuppet/animata/src/Camera.cpp
+	<math.h>
+	<stdio.h>
+	<OPENGL/gl.h>
+	<OPENGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	"Camera.h"
+
+1374216638 source:/home/grimus/code/ElectricPuppet/animata/src/Face.cpp
+	"Face.h"
+
+1374216646 source:/home/grimus/code/ElectricPuppet/animata/src/ImageBox.cpp
+	<stdio.h>
+	<string.h>
+	<limits.h>
+	"ImageBox.h"
+	"animataUI.h"
+
+1374216642 source:/home/grimus/code/ElectricPuppet/animata/src/IO.cpp
+	<libgen.h>
+	<algorithm>
+	<iterator>
+	"animata.h"
+	"animataUI.h"
+	"IO.h"
+
+1374216640 source:/home/grimus/code/ElectricPuppet/animata/src/Joint.cpp
+	<stdio.h>
+	<string.h>
+	<math.h>
+	"Joint.h"
+	"Primitives.h"
+	"animata.h"
+	"animataUI.h"
+
+1374216646 source:/home/grimus/code/ElectricPuppet/animata/src/Layer.cpp
+	<stdio.h>
+	<float.h>
+	<algorithm>
+	"Layer.h"
+	"animata.h"
+	"animataUI.h"
+	"Transform.h"
+
+1374216644 source:/home/grimus/code/ElectricPuppet/animata/src/libs/FLU/flu_pixmaps.cpp
+	"FLU/flu_pixmaps.h"
+
+1374216644 /home/grimus/code/ElectricPuppet/animata/src/libs//FLU/flu_pixmaps.h
+	"FLU/flu_export.h"
+
+1374216644 source:/home/grimus/code/ElectricPuppet/animata/src/libs/FLU/Flu_Tree_Browser.cpp
+	<FL/Fl.H>
+	<FL/fl_draw.H>
+	<FL/math.h>
+	<stdlib.h>
+	"FLU/Flu_Tree_Browser.h"
+	"FLU/flu_pixmaps.h"
+
+1374216644 source:/home/grimus/code/ElectricPuppet/animata/src/libs/FLU/FluSimpleString.cpp
+	"FLU/FluSimpleString.h"
+
+1359011512 source:/home/grimus/code/ElectricPuppet/animata/src/libs/oscpack/ip/IpEndpointName.cpp
+	"IpEndpointName.h"
+	<cstdio>
+	"NetworkingUtils.h"
+
+1359011512 source:/home/grimus/code/ElectricPuppet/animata/src/libs/oscpack/ip/posix/NetworkingUtils.cpp
+	"ip/NetworkingUtils.h"
+	<netdb.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<cstring>
+
+1364803150 source:/home/grimus/code/ElectricPuppet/animata/src/libs/oscpack/ip/posix/UdpSocket.cpp
+	"ip/UdpSocket.h"
+	<pthread.h>
+	<unistd.h>
+	<stdlib.h>
+	<stdio.h>
+	<netdb.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<sys/time.h>
+	<netinet/in.h>
+	<signal.h>
+	<math.h>
+	<errno.h>
+	<string.h>
+	<algorithm>
+	<cassert>
+	<cstring>
+	<stdexcept>
+	<vector>
+	"ip/PacketListener.h"
+	"ip/TimerListener.h"
+
+1359009918 /home/grimus/code/ElectricPuppet/animata/src/libs/oscpack/ip/TimerListener.h
+
+1362392226 source:/home/grimus/code/ElectricPuppet/animata/src/libs/oscpack/osc/OscOutboundPacketStream.cpp
+	"OscOutboundPacketStream.h"
+	<malloc.h>
+	<stdlib.h>
+	<cassert>
+	<cstring>
+	<cstddef>
+	"OscHostEndianness.h"
+
+1362550218 /home/grimus/code/ElectricPuppet/animata/src/libs/oscpack/osc/OscHostEndianness.h
+
+1362392226 source:/home/grimus/code/ElectricPuppet/animata/src/libs/oscpack/osc/OscPrintReceivedElements.cpp
+	"OscPrintReceivedElements.h"
+	<cstring>
+	<ctime>
+	<iostream>
+	<iomanip>
+
+1359011512 /home/grimus/code/ElectricPuppet/animata/src/libs/oscpack/osc/OscPrintReceivedElements.h
+	<iosfwd>
+	"OscReceivedElements.h"
+
+1362975476 source:/home/grimus/code/ElectricPuppet/animata/src/libs/oscpack/osc/OscReceivedElements.cpp
+	"OscReceivedElements.h"
+	"OscHostEndianness.h"
+	<cstddef>
+
+1362386750 source:/home/grimus/code/ElectricPuppet/animata/src/libs/oscpack/osc/OscTypes.cpp
+	"OscTypes.h"
+
+1374216644 source:/home/grimus/code/ElectricPuppet/animata/src/libs/tinyxml/tinystr.cpp
+	"tinystr.h"
+
+1374216644 source:/home/grimus/code/ElectricPuppet/animata/src/libs/tinyxml/tinyxml.cpp
+	<ctype.h>
+	<sstream>
+	<iostream>
+	"tinyxml.h"
+
+1374216644 source:/home/grimus/code/ElectricPuppet/animata/src/libs/tinyxml/tinyxmlerror.cpp
+	"tinyxml.h"
+
+1374216644 source:/home/grimus/code/ElectricPuppet/animata/src/libs/tinyxml/tinyxmlparser.cpp
+	<ctype.h>
+	<stddef.h>
+	"tinyxml.h"
+	<windows.h>
+
+1374216642 source:/home/grimus/code/ElectricPuppet/animata/src/Matrix.cpp
+	"Matrix.h"
+	"Vector3D.h"
+	<stdio.h>
+	<math.h>
+
+1436743381 source:/home/grimus/code/ElectricPuppet/animata/src/Mesh.cpp
+	<stdio.h>
+	<iostream>
+	<algorithm>
+	"animata.h"
+	"animataUI.h"
+	"Primitives.h"
+	"Mesh.h"
+	"Subdiv.h"
+	"Transform.h"
+	<OPENGL/gl.h>
+	<GL/gl.h>
+
+1374216638 /home/grimus/code/ElectricPuppet/animata/src/Subdiv.h
+	"Vector2D.h"
+	"QuadEdge.h"
+	"Mesh.h"
+
+1374216642 /home/grimus/code/ElectricPuppet/animata/src/QuadEdge.h
+	<vector>
+
+1391932286 source:/home/grimus/code/ElectricPuppet/animata/src/OSCManager.cpp
+	<iostream>
+	<unistd.h>
+	"animata.h"
+	"animataUI.h"
+	"OSCManager.h"
+
+1378535688 source:/home/grimus/code/ElectricPuppet/animata/src/Playback.cpp
+	"Playback.h"
+	"animataUI.h"
+
+1374216642 source:/home/grimus/code/ElectricPuppet/animata/src/Primitives.cpp
+	<math.h>
+	"animata.h"
+	"Primitives.h"
+	"Bone.h"
+	"Joint.h"
+
+1374216646 source:/home/grimus/code/ElectricPuppet/animata/src/QuadEdge.cpp
+	<stdio.h>
+	<stdlib.h>
+	<vector>
+	"QuadEdge.h"
+
+1378793334 source:/home/grimus/code/ElectricPuppet/animata/src/Selection.cpp
+	<stdio.h>
+	"Selection.h"
+	"Transform.h"
+
+1374216646 source:/home/grimus/code/ElectricPuppet/animata/src/Skeleton.cpp
+	<stdio.h>
+	"animata.h"
+	"animataUI.h"
+	"Primitives.h"
+	"Skeleton.h"
+	"Transform.h"
+
+1374216642 source:/home/grimus/code/ElectricPuppet/animata/src/Subdiv.cpp
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<float.h>
+	"Subdiv.h"
+
+1374216638 source:/home/grimus/code/ElectricPuppet/animata/src/Texture.cpp
+	"Texture.h"
+	<stdio.h>
+	<math.h>
+
+1378182642 source:/home/grimus/code/ElectricPuppet/animata/src/TextureManager.cpp
+	<stdio.h>
+	<string.h>
+	"TextureManager.h"
+	"animata.h"
+	"animataUI.h"
+	"Transform.h"
+
+1374216646 source:/home/grimus/code/ElectricPuppet/animata/src/Transform.cpp
+	"Transform.h"
+
+1374216642 source:/home/grimus/code/ElectricPuppet/animata/src/Vector2D.cpp
+	<math.h>
+	<float.h>
+	"Vector2D.h"
+
+1374216646 source:/home/grimus/code/ElectricPuppet/animata/src/Vector3D.cpp
+	<math.h>
+	<float.h>
+	"Vector3D.h"
+	"Matrix.h"
+
+1374216640 source:/home/grimus/code/ElectricPuppet/animata/src/Vertex.cpp
+	"Vertex.h"
+	"Primitives.h"
+

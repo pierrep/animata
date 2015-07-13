@@ -1,0 +1,153 @@
+file /home/grimus/code/animata/src/SConscript,line 108:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C++ library m... 
+scons: Configure: ".sconf_temp/conftest_0.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_0.cpp <-
+  |  |
+  |  |
+  |  |#include "math.h"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_0.o" is up to date.
+scons: Configure: The original builder output was:
+  |g++ -o .sconf_temp/conftest_0.o -c -Wall -Wno-unknown-pragmas -Wno-long-long -pedantic -pthread -Wno-format -DTIXML_USE_STL -DOSC_HOST_LITTLE_ENDIAN -DANIMATA_MAJOR_VERSION=0 -DANIMATA_MINOR_VERSION=004 -ggdb2 -O0 -DDEBUG=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT -I/usr/include -Ibuild/libs -Isrc/libs -Ibuild/libs/tinyxml -Isrc/libs/tinyxml -Ibuild/libs/oscpack -Isrc/libs/oscpack -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 .sconf_temp/conftest_0.cpp
+  |
+scons: Configure: ".sconf_temp/conftest_0" is up to date.
+scons: Configure: The original builder output was:
+  |g++ -o .sconf_temp/conftest_0 -Wl,-Bsymbolic-functions .sconf_temp/conftest_0.o -L/usr/lib/x86_64-linux-gnu -lfltk_images -lfltk_gl -lfltk -lm
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C++ library pthread... 
+scons: Configure: ".sconf_temp/conftest_1.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_1.cpp <-
+  |  |
+  |  |
+  |  |#include "pthread.h"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_1.o" is up to date.
+scons: Configure: The original builder output was:
+  |g++ -o .sconf_temp/conftest_1.o -c -Wall -Wno-unknown-pragmas -Wno-long-long -pedantic -pthread -Wno-format -DTIXML_USE_STL -DOSC_HOST_LITTLE_ENDIAN -DANIMATA_MAJOR_VERSION=0 -DANIMATA_MINOR_VERSION=004 -ggdb2 -O0 -DDEBUG=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT -I/usr/include -Ibuild/libs -Isrc/libs -Ibuild/libs/tinyxml -Isrc/libs/tinyxml -Ibuild/libs/oscpack -Isrc/libs/oscpack -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 .sconf_temp/conftest_1.cpp
+  |
+scons: Configure: ".sconf_temp/conftest_1" is up to date.
+scons: Configure: The original builder output was:
+  |g++ -o .sconf_temp/conftest_1 -Wl,-Bsymbolic-functions .sconf_temp/conftest_1.o -L/usr/lib/x86_64-linux-gnu -lfltk_images -lfltk_gl -lfltk -lm -lpthread
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C++ library fltk... 
+scons: Configure: ".sconf_temp/conftest_2.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_2.cpp <-
+  |  |
+  |  |
+  |  |#include "FL/Fl.H"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_2.o" is up to date.
+scons: Configure: The original builder output was:
+  |g++ -o .sconf_temp/conftest_2.o -c -Wall -Wno-unknown-pragmas -Wno-long-long -pedantic -pthread -Wno-format -DTIXML_USE_STL -DOSC_HOST_LITTLE_ENDIAN -DANIMATA_MAJOR_VERSION=0 -DANIMATA_MINOR_VERSION=004 -ggdb2 -O0 -DDEBUG=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT -I/usr/include -Ibuild/libs -Isrc/libs -Ibuild/libs/tinyxml -Isrc/libs/tinyxml -Ibuild/libs/oscpack -Isrc/libs/oscpack -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 .sconf_temp/conftest_2.cpp
+  |
+scons: Configure: ".sconf_temp/conftest_2" is up to date.
+scons: Configure: The original builder output was:
+  |g++ -o .sconf_temp/conftest_2 -Wl,-Bsymbolic-functions .sconf_temp/conftest_2.o -L/usr/lib/x86_64-linux-gnu -lfltk_images -lfltk_gl -lfltk -lm -lpthread -lfltk
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C++ library X11... 
+scons: Configure: ".sconf_temp/conftest_3.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_3.cpp <-
+  |  |
+  |  |
+  |  |#include "X11/Xlib.h"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_3.o" is up to date.
+scons: Configure: The original builder output was:
+  |g++ -o .sconf_temp/conftest_3.o -c -Wall -Wno-unknown-pragmas -Wno-long-long -pedantic -pthread -Wno-format -DTIXML_USE_STL -DOSC_HOST_LITTLE_ENDIAN -DANIMATA_MAJOR_VERSION=0 -DANIMATA_MINOR_VERSION=004 -ggdb2 -O0 -DDEBUG=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT -I/usr/include -Ibuild/libs -Isrc/libs -Ibuild/libs/tinyxml -Isrc/libs/tinyxml -Ibuild/libs/oscpack -Isrc/libs/oscpack -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 .sconf_temp/conftest_3.cpp
+  |
+scons: Configure: ".sconf_temp/conftest_3" is up to date.
+scons: Configure: The original builder output was:
+  |g++ -o .sconf_temp/conftest_3 -Wl,-Bsymbolic-functions .sconf_temp/conftest_3.o -L/usr/lib/x86_64-linux-gnu -lfltk_images -lfltk_gl -lfltk -lm -lpthread -lfltk -lX11
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C++ library GL... 
+scons: Configure: ".sconf_temp/conftest_4.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_4.cpp <-
+  |  |
+  |  |
+  |  |#include "GL/gl.h"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_4.o" is up to date.
+scons: Configure: The original builder output was:
+  |g++ -o .sconf_temp/conftest_4.o -c -Wall -Wno-unknown-pragmas -Wno-long-long -pedantic -pthread -Wno-format -DTIXML_USE_STL -DOSC_HOST_LITTLE_ENDIAN -DANIMATA_MAJOR_VERSION=0 -DANIMATA_MINOR_VERSION=004 -ggdb2 -O0 -DDEBUG=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT -I/usr/include -Ibuild/libs -Isrc/libs -Ibuild/libs/tinyxml -Isrc/libs/tinyxml -Ibuild/libs/oscpack -Isrc/libs/oscpack -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 .sconf_temp/conftest_4.cpp
+  |
+scons: Configure: ".sconf_temp/conftest_4" is up to date.
+scons: Configure: The original builder output was:
+  |g++ -o .sconf_temp/conftest_4 -Wl,-Bsymbolic-functions .sconf_temp/conftest_4.o -L/usr/lib/x86_64-linux-gnu -lfltk_images -lfltk_gl -lfltk -lm -lpthread -lfltk -lX11 -lGL
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C++ library GLU... 
+scons: Configure: ".sconf_temp/conftest_5.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_5.cpp <-
+  |  |
+  |  |
+  |  |#include "GL/glu.h"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_5.o" is up to date.
+scons: Configure: The original builder output was:
+  |g++ -o .sconf_temp/conftest_5.o -c -Wall -Wno-unknown-pragmas -Wno-long-long -pedantic -pthread -Wno-format -DTIXML_USE_STL -DOSC_HOST_LITTLE_ENDIAN -DANIMATA_MAJOR_VERSION=0 -DANIMATA_MINOR_VERSION=004 -ggdb2 -O0 -DDEBUG=1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT -I/usr/include -Ibuild/libs -Isrc/libs -Ibuild/libs/tinyxml -Isrc/libs/tinyxml -Ibuild/libs/oscpack -Isrc/libs/oscpack -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 .sconf_temp/conftest_5.cpp
+  |
+scons: Configure: ".sconf_temp/conftest_5" is up to date.
+scons: Configure: The original builder output was:
+  |g++ -o .sconf_temp/conftest_5 -Wl,-Bsymbolic-functions .sconf_temp/conftest_5.o -L/usr/lib/x86_64-linux-gnu -lfltk_images -lfltk_gl -lfltk -lm -lpthread -lfltk -lX11 -lGL -lGLU
+  |
+scons: Configure: (cached) yes
+
+

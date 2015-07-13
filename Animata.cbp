@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Animata" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="src/;src/libs/;src/libs/FLU/;src/libs/oscpack/;src/libs/tinyxml/;src/libs/oscpack/ip/;src/libs/oscpack/ip/posix/;src/libs/oscpack/osc/;" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Animata" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Animata" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-O3" />
+					<Add option="-s" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-pedantic" />
+			<Add option="-Wall" />
+			<Add option="`fltk-config --cxxflags`" />
+			<Add option="-Wno-unknown-pragmas" />
+			<Add option="-Wno-long-long" />
+			<Add option="-pthread" />
+			<Add option="-Wno-format" />
+			<Add option="-DTIXML_USE_STL" />
+			<Add option="-DOSC_HOST_LITTLE_ENDIAN" />
+			<Add directory="src/libs/tinyxml" />
+			<Add directory="src/libs/oscpack" />
+			<Add directory="src/libs/" />
+		</Compiler>
+		<Linker>
+			<Add option="`fltk-config --ldstaticflags --use-images --use-gl`" />
+			<Add library="GL" />
+			<Add library="X11" />
+			<Add library="GLU" />
+			<Add library="pthread" />
+			<Add library="fltk" />
+			<Add library="m" />
+			<Add library="Xpm" />
+		</Linker>
+		<Unit filename="src/ADrawable.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Bone.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Bone.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Camera.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Camera.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Face.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Face.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/IO.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/IO.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/ImageBox.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/ImageBox.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Joint.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Joint.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Layer.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Layer.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Matrix.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Matrix.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Mesh.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Mesh.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/OSCManager.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/OSCManager.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Playback.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Playback.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Preferences.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Primitives.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Primitives.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/QuadEdge.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/QuadEdge.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Selection.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Selection.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Skeleton.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Skeleton.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Subdiv.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Subdiv.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Texture.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Texture.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/TextureManager.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/TextureManager.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Transform.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Transform.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Vector2D.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Vector2D.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Vector3D.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Vector3D.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Vertex.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Vertex.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/animata.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/animata.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/animataUI.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/animataUI.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/libs/FLU/FluSimpleString.cpp">
+			<Option virtualFolder="src/libs/FLU/" />
+		</Unit>
+		<Unit filename="src/libs/FLU/FluSimpleString.h">
+			<Option virtualFolder="src/libs/FLU/" />
+		</Unit>
+		<Unit filename="src/libs/FLU/Flu_Enumerations.h">
+			<Option virtualFolder="src/libs/FLU/" />
+		</Unit>
+		<Unit filename="src/libs/FLU/Flu_Tree_Browser.cpp">
+			<Option virtualFolder="src/libs/FLU/" />
+		</Unit>
+		<Unit filename="src/libs/FLU/Flu_Tree_Browser.h">
+			<Option virtualFolder="src/libs/FLU/" />
+		</Unit>
+		<Unit filename="src/libs/FLU/flu_export.h">
+			<Option virtualFolder="src/libs/FLU/" />
+		</Unit>
+		<Unit filename="src/libs/FLU/flu_pixmaps.cpp">
+			<Option virtualFolder="src/libs/FLU/" />
+		</Unit>
+		<Unit filename="src/libs/FLU/flu_pixmaps.h">
+			<Option virtualFolder="src/libs/FLU/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/ip/IpEndpointName.cpp">
+			<Option virtualFolder="src/libs/oscpack/ip/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/ip/IpEndpointName.h">
+			<Option virtualFolder="src/libs/oscpack/ip/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/ip/NetworkingUtils.h">
+			<Option virtualFolder="src/libs/oscpack/ip/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/ip/PacketListener.h">
+			<Option virtualFolder="src/libs/oscpack/ip/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/ip/TimerListener.h">
+			<Option virtualFolder="src/libs/oscpack/ip/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/ip/UdpSocket.h">
+			<Option virtualFolder="src/libs/oscpack/ip/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/ip/posix/NetworkingUtils.cpp">
+			<Option virtualFolder="src/libs/oscpack/ip/posix/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/ip/posix/UdpSocket.cpp">
+			<Option virtualFolder="src/libs/oscpack/ip/posix/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/osc/MessageMappingOscPacketListener.h">
+			<Option virtualFolder="src/libs/oscpack/osc/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/osc/OscException.h">
+			<Option virtualFolder="src/libs/oscpack/osc/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/osc/OscHostEndianness.h">
+			<Option virtualFolder="src/libs/oscpack/osc/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/osc/OscOutboundPacketStream.cpp">
+			<Option virtualFolder="src/libs/oscpack/osc/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/osc/OscOutboundPacketStream.h">
+			<Option virtualFolder="src/libs/oscpack/osc/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/osc/OscPacketListener.h">
+			<Option virtualFolder="src/libs/oscpack/osc/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/osc/OscPrintReceivedElements.cpp">
+			<Option virtualFolder="src/libs/oscpack/osc/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/osc/OscPrintReceivedElements.h">
+			<Option virtualFolder="src/libs/oscpack/osc/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/osc/OscReceivedElements.cpp">
+			<Option virtualFolder="src/libs/oscpack/osc/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/osc/OscReceivedElements.h">
+			<Option virtualFolder="src/libs/oscpack/osc/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/osc/OscTypes.cpp">
+			<Option virtualFolder="src/libs/oscpack/osc/" />
+		</Unit>
+		<Unit filename="src/libs/oscpack/osc/OscTypes.h">
+			<Option virtualFolder="src/libs/oscpack/osc/" />
+		</Unit>
+		<Unit filename="src/libs/tinyxml/tinystr.cpp">
+			<Option virtualFolder="src/libs/tinyxml/" />
+		</Unit>
+		<Unit filename="src/libs/tinyxml/tinystr.h">
+			<Option virtualFolder="src/libs/tinyxml/" />
+		</Unit>
+		<Unit filename="src/libs/tinyxml/tinyxml.cpp">
+			<Option virtualFolder="src/libs/tinyxml/" />
+		</Unit>
+		<Unit filename="src/libs/tinyxml/tinyxml.h">
+			<Option virtualFolder="src/libs/tinyxml/" />
+		</Unit>
+		<Unit filename="src/libs/tinyxml/tinyxmlerror.cpp">
+			<Option virtualFolder="src/libs/tinyxml/" />
+		</Unit>
+		<Unit filename="src/libs/tinyxml/tinyxmlparser.cpp">
+			<Option virtualFolder="src/libs/tinyxml/" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
